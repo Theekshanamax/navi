@@ -24,7 +24,7 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "Help list",
             category: "general",
-            react: "✨",
+            react: "🦁",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -56,8 +56,8 @@ Secktor.cmd({
                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
                     '```' + `│ ╭──────────────◆
-│ │ User:- ${citel.pushName}
-│ │ Theme:- ${tlang().title}
+│ │ User🦁:- ${citel.pushName}
+│ │ Theme🦁:- ${tlang().title}
 │ │ Prefix:- [ ${prefix} ]
 │ │ Owner:- ${Config.ownername}
 │ │ Plugins:- ${commands.length}
@@ -82,7 +82,7 @@ Secktor.cmd({
                    }
   
                 }
-                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with ❤️ in Nodejs* `
+                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with  praveen* `
                 let buttonMessaged = {
                     image: { url: await botpic() },
                     caption: str
