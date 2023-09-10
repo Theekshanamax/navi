@@ -256,7 +256,7 @@ ${alivemessage}
 
 _Type ${prefix}menu for my command list._
 
-_Powered by ${Config.ownername}_
+_🦁Powered by🦁 ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
