@@ -66,9 +66,7 @@ Secktor.cmd({
 │ │ 😋Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 │ │ ⏰Time:- ${time}
 │ │ 📅Date:- ${date}
-│ │ 
 │ │ හැගීම් තියෙන්නේ විදින්න මිසක් විදවන්න නෙවෙයි ළමයෝ😘😍
-│ │
 │ ╰──────────────◆
 ╰───────────────⊷\n
 ` + '```'
@@ -114,7 +112,6 @@ Secktor.cmd({
 ┃  │ ☔Uptime: ${runtime(process.uptime())}
 ┃  │ 😋Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 ┃  │  කලයත් සමග වෙනස් උයේ මිනිසුන් මිසක් කාලය නොවෙ 😋🌼👈
-┃  │  
 ┃  ╰───────────
 ╰━━━━━━━━━━━──⊷\n`
 for (let i = 0; i < commands.length; i++) 
