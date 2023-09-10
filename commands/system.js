@@ -240,25 +240,23 @@ cmd({
             pattern: "alive",
             category: "general",
             filename: __filename,
-            react: "❤️",
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*  I'm redlion 🍏.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
 _This is  ${tlang().title}._
 ${alivemessage}
 
-😊පෙරලෙන හැම පිටුවෙම  තමන්ගෙ කතාව ලියාගෙන යන්න ...🌻🍃❤️
+*Version:-* _0.0.7_
+*Uptime:-* _${runtime(process.uptime())}_
+*Owner:-* _${Config.ownername}_
+*Branch:-* _${Config.BRANCH}_
 
-*🦁Version:-* _0.0.7_
-*🦁Uptime:-* _${runtime(process.uptime())}_
-*🦁Owner:-* _${Config.ownername}_
-*🦁Branch:-* _${Config.BRANCH}_
+_Type ${prefix}menu for my command list._
 
-
-_🦁Powered by🦁 ${Config.ownername}_
+_Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
@@ -279,7 +277,6 @@ cmd({
         pattern: "allnotes",
         category: "owner",
         filename: __filename,
-        react: "❤️",
         desc: "Shows list of all notes."
     },
     async(Void, citel, text,{ isCreator }) => {
