@@ -248,7 +248,7 @@ cmd({
 *Hello, ${citel.pushName},*
 _This is  ${tlang().title}._
 ${alivemessage}
-
+😊පෙරලෙන හැම පිටුවෙම  තමන්ගෙ කතාව ලියාගෙන යන්න ...🌻🍃❤️
 *🦁Version:-* _0.0.7_
 *🦁Uptime:-* _${runtime(process.uptime())}_
 *🦁Owner:-* _${Config.ownername}_
