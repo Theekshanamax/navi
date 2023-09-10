@@ -17,6 +17,7 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
 //---------------------------------------------------------------------------
 cmd({
             pattern: "join",
+	    react: "👥",
             desc: "joins group by link",
             category: "owner",
             use: '<group link.>',
@@ -28,7 +29,7 @@ cmd({
                 citel.reply("Link Invalid, Please Send a valid whatsapp Group Link!");
             let result = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
             await Void.groupAcceptInvite(result)
-                .then((res) => citel.reply("🟩Joined Group"))
+                .then((res) => citel.reply("✅Joined Group"))
                 .catch((err) => citel.reply("Error in Joining Group"));
 
         }
@@ -36,6 +37,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "sticker",
+	    react: "🎁",
             alias: ["s"],
             desc: "Makes sticker of replied image/video.",
             category: "group",
@@ -83,6 +85,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "support",
+	react: "🦋",
         desc: "Sends official support group link.",
         category: "group",
         filename: __filename,
@@ -100,6 +103,7 @@ cmd({
 //---------------------------------------------------------------------------
 cmd({
             pattern: "warn",
+	    react: "🛍️",
             desc: "Warns user in Group.",
             category: "group",
             filename: __filename,
@@ -118,6 +122,7 @@ cmd({
 cmd({
             pattern: "unblock",
             desc: "Unblocked to the quoted user.",
+	    react: "✅",
             category: "owner",
             filename: __filename,
 
@@ -136,6 +141,7 @@ cmd({
     cmd({
         pattern: "ujid",
         desc: "get jid of all user in a group.",
+	react: "🎀",
         category: "owner",
         filename: __filename,
     },
@@ -155,6 +161,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "tagall",
+	react: "📝",
         desc: "Tags every person of group.",
         category: "group",
         filename: __filename,
@@ -168,7 +175,7 @@ cmd({
         if (!isAdmins) return citel.reply(tlang().admin);
 
         let textt = `
-══✪〘   *Tag All*   〙✪══
+══🦁   *Tag All*   🦁══
 
 ➲ *Message :* ${text ? text : "blank"}\n\n
 ➲ *Author:* ${citel.pushName} 🔖
@@ -188,6 +195,7 @@ cmd({
 //---------------------------------------------------------------------------
 cmd({
             pattern: "request",
+	    react: "☔",
             desc: "Sends requst to main Bot developer.",
             category: "group",
             filename: __filename,
@@ -222,6 +230,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "retrive",
+	    react: "♻️",
             desc: "Copies and Forwords viewonce message.",
             category: "group",
             filename: __filename,
@@ -246,6 +255,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "rwarn",
+	    react: "⭐",
             desc: "Deletes all previously given warns of quoted user.",
             category: "group",
             filename: __filename,
@@ -261,6 +271,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "poll",
+	    react: "😜",
             desc: "Makes poll in group.",
             category: "group",
             filename: __filename,
@@ -288,6 +299,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "profile",
+	    react: "💌",
             desc: "Shows profile of user.",
             category: "group",
             filename: __filename,
@@ -385,6 +397,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "rank",
+	    react: "🦐",
             desc: "Sends rank card of user.",
             category: "group",
             filename: __filename,
@@ -986,14 +999,12 @@ cmd({ on: "text" }, async(Void, citel) => {
                     url: await botpic(),
                 },
                 caption: `
-╔════◇
-║ *Wow,Someone just*
-║ *leveled Up huh⭐*
+╔════💛
+║   සමහර අහිමි වීම් අපිව හොදම හමුවීම් "ළග නතර කරවනවා , 😊🪄🕊️
 ║ *👤Name*: ${citel.pushName}
-║ *🎐Level*: ${sck1.level}🍭
-║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-║ *📍Role*: *${role}*
-║ *Enjoy🥳*
+║ *🍋Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+║ *🍏Role*: *${role}*
+║ *🦁GitHub*:${https://github.com/Theekshanamax/navi}
 ╚════════════╝
 `,
             }, {
