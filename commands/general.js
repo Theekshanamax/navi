@@ -104,7 +104,117 @@ let buttonMessage = {
 Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
 }
 )
+//---------------------------------------------------------------------------
 
+cmd({
+
+            pattern: "logo",
+
+            desc: "(menu cmdlist).",
+
+            category: "downloader",
+
+            react: "🎲",
+
+            filename: __filename,
+
+            use: '<faded-Alan walker.>',
+
+        },
+
+        async(Void, citel, text) => {
+
+         
+
+            let buttons = [{
+
+                    buttonId: `${prefix}system`,
+
+                    buttonText: {
+
+                        displayText: "System",
+
+                    },
+
+                    type: 1,
+
+                },
+
+                  {
+
+                    buttonId: `${prefix}ping`,
+
+                    buttonText: {
+
+                        displayText: "Ping",
+
+                    },
+
+                    type: 1,
+
+                },
+
+            ];
+
+            let buttonMessage = {
+
+                image: {
+
+                    url: await botpic(),
+
+                },
+
+                caption: `
+.logo1 text
+.logo2 text
+.logo3 text
+.logo4 text
+.logo5 text
+.logo6 text
+.logo7 text
+.logo8 text
+.logo9 text
+.logo10 text
+.logo11 text
+.logo12 text
+.logo13 text
+.logo14 text
+.logo15 text
+.logo16 text
+.logo17 text
+.logo18 text
+.logo19 text
+.logo20 text
+.logo21 text
+.logo22 text
+.logo23 text
+.logo24 text
+.logo25 text
+.logo26 text
+.logo27 text
+.logo28 text
+.logo29 text
+.logo30 text
+
+
+`,
+
+                footer: tlang().footer,
+
+
+                headerType: 4,
+
+            };
+
+            return Void.sendMessage(citel.chat, buttonMessage, {
+
+                quoted: citel,
+
+            });
+
+        }
+
+    )
 //---------------------------------------------------------------------------
 cmd({
         pattern: "repo",
