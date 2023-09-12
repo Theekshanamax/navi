@@ -54,7 +54,7 @@
                        "translatte": "^3.0.1",
                        "util": "^0.12.4",           
                        "secktor-pack": "latest",
-                       "ytdl-secktor": "latest",
+                       "ytdl-secktor": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch.2",
                        "pastebin-js": "latest",
                        "fb-info-video":"^1.0.2",
                        "wa-sticker-formatter": "^4.3.2"
