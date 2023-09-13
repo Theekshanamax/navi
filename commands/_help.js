@@ -2,10 +2,10 @@
   Licensed under the  GPL-3.0 License; 
   You may not use this file except in compliance with the License. 
   It is supplied in the hope that it may be useful. 
-  * @project_name : Redlion 
-  * @author : Theekshana 
-  * @description : RedLion,A Multi-functional whatsapp bot. 
-  * @version 0.0.1 **/
+  * @project_name : Blue_Lion_Bot 
+  * @author : nipuna rangana
+  * @description : Blue-Lion,A Multi-functional whatsapp bot. 
+  * @version 0.0.2 **/
 const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
@@ -20,7 +20,7 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "Help list",
             category: "general",
-            react: "🦁",
+            react: "📝",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -53,14 +53,14 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                                  let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
-                    '```' + `│ ╭──────◇🦁◇──────«
+                    '```' + `│ ╭──────◇🍧◇──────«
 │ │ 👤User:- ${citel.pushName}
 │ │ 💝Theme:- ${tlang().title}
-│ │ 🦁Owner:- ${vdf}
-│ │ 🎁Plugins:- ${commands.length}
-│ │ 🧑‍✈️Users:- ${total}
-│ │ ⏳Uptime:- ${runtime(process.uptime())}
-│ │ 🍏Mem:- ${formatp(os.totalmem() - os.freemem())}
+│ │ 🎧Owner:- ${vdf}
+│ │ 🎵Plugins:- ${commands.length}
+│ │ 🧓Users:- ${total}
+│ │ 🆙Uptime:- ${runtime(process.uptime())}
+│ │ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())}
 │ ╰──────●💕●──────»
 ╰───────────────⊷\n
 ` + '```'
@@ -68,11 +68,11 @@ Secktor.cmd({
                 for (const category in cmds) {
                     str += `
 ┃  ╭──────◑❤️◑──────«
-┃  │     🦁  ${tiny(category)} 🦁
+┃  │     🎧  ${tiny(category)} 🎧
 ┃  ╰┬─────◈💕◈──────»
 ┃  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `┃  │ 🧚 ${plugins}\n`
+                        str += `┃  │ ◉ ${plugins}\n`
                     }
                     str += `┃  ╰────────────◆`
                 }
@@ -84,7 +84,9 @@ Secktor.cmd({
                     footer: tlang().title,
                     headerType: 4
                 };
-return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
+await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }
         }
     )
     //---------------------------------------------------------------------------
@@ -92,7 +94,7 @@ Secktor.cmd({
             pattern: "list",
             desc: "list menu",
             category: "general",
-            react: "🦋"
+            react: "📜"
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
@@ -100,15 +102,15 @@ Secktor.cmd({
             let str = `
 ╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
             str += '```' + `
-┃ ╭──────────────      
-┃ │ 👤User: ${citel.pushName}
-┃ │ ❤️Theme: ${tlang().title}
-┃ │ 🧑‍✈️Prefix: ${prefix}
-┃ │ 🦁Owner: ${vdf}
-┃ │ 🎁Commands: ${commands.length}
-┃ │ ⏳Uptime: ${runtime(process.uptime())}
-┃ │ 🍏Mem: ${formatp(os.totalmem() - os.freemem())}
-┃ ╰───────────
+┃ ☀╭──────────────      
+┃ ☀│ 👤User: ${citel.pushName}
+┃ ☀│ ❤️Theme: ${tlang().title}
+┃ ☀│ 🎵Prefix: ${prefix}
+┃ ☀│ 🎧Owner: ${vdf}
+┃ ☀│ 🍧Commands: ${commands.length}
+┃ ☀│ 💝Uptime: ${runtime(process.uptime())}
+┃ ☀│ 🆙Mem: ${formatp(os.totalmem() - os.freemem())}
+┃   ╰───────────
 ╰━━━━━━━━━━━──⊷\n` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
@@ -124,7 +126,7 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "❤️",
+        react: "🍧",
         filename: __filename
     },
     async(Void, citel) => {
