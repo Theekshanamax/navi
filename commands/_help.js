@@ -83,8 +83,7 @@ Secktor.cmd({
                     caption: str,
                     footer: tlang().title,
                     headerType: 4
-                };
-await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
+                 };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }
         }
