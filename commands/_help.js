@@ -53,7 +53,7 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                                  let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
                 str +=
-                    '```' + `│ ╭──────◇🍧◇──────«
+                    '```' + `│ ╭──────◇🦁◇──────«
 │ │ 👤User:- ${citel.pushName}
 │ │ 💝Theme:- ${tlang().title}
 │ │ 🎧Owner:- ${vdf}
@@ -68,11 +68,11 @@ Secktor.cmd({
                 for (const category in cmds) {
                     str += `
 ┃  ╭──────◑❤️◑──────«
-┃  │     🎧  ${tiny(category)} 🎧
+┃  │     🦁  ${tiny(category)} 🦁
 ┃  ╰┬─────◈💕◈──────»
 ┃  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `┃  │ ◉ ${plugins}\n`
+                        str += `┃  │ 🦋 ${plugins}\n`
                     }
                     str += `┃  ╰────────────◆`
                 }
@@ -84,7 +84,7 @@ Secktor.cmd({
                     footer: tlang().title,
                     headerType: 4
                 };
-await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/Voice/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
+await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/nipuna15/raw/main/Alive.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             }
         }
@@ -111,7 +111,7 @@ Secktor.cmd({
 ┃ ☀│ 💝Uptime: ${runtime(process.uptime())}
 ┃ ☀│ 🆙Mem: ${formatp(os.totalmem() - os.freemem())}
 ┃   ╰───────────
-╰━━━━━━━━━━━──⊷\n` + '```'
+╰━━━━━━━━━━━━━━━━━━──⊷\n` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
@@ -126,7 +126,7 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "🍧",
+        react: "🦋",
         filename: __filename
     },
     async(Void, citel) => {
