@@ -2,9 +2,9 @@
   Licensed under the  GPL-3.0 License; 
   You may not use this file except in compliance with the License. 
   It is supplied in the hope that it may be useful. 
-  * @project_name : Blue_Lion_Bot 
-  * @author : nipuna rangana
-  * @description : Blue-Lion,A Multi-functional whatsapp bot. 
+  * @project_name : RED_Lion_Bot 
+  * @author : Theekshanamax
+  * @description : Red-Lion,A Multi-functional whatsapp bot. 
   * @version 0.0.2 **/
 const os = require('os')
 const moment = require("moment-timezone")
@@ -99,17 +99,17 @@ Secktor.cmd({
             const { commands } = require('../lib');
             const vdf = Config.ownername
             let str = `
-╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
+╭━━🦋 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 🦋━━──⊷`
             str += '```' + `
-┃ ☀╭──────────────      
-┃ ☀│ 👤User: ${citel.pushName}
-┃ ☀│ ❤️Theme: ${tlang().title}
-┃ ☀│ 🎵Prefix: ${prefix}
-┃ ☀│ 🎧Owner: ${vdf}
-┃ ☀│ 🍧Commands: ${commands.length}
-┃ ☀│ 💝Uptime: ${runtime(process.uptime())}
-┃ ☀│ 🆙Mem: ${formatp(os.totalmem() - os.freemem())}
-┃   ╰───────────
+┃       
+┃ 👤User: ${citel.pushName}
+┃ 💝Theme: ${tlang().title}
+┃ 🦋Prefix: ${prefix}
+┃ 🦁Owner: ${vdf}
+┃ 🎁Commands: ${commands.length}
+┃ ⏳Uptime: ${runtime(process.uptime())}
+┃ 🍏Mem: ${formatp(os.totalmem() - os.freemem())}
+┃  
 ╰━━━━━━━━━━━━━━━━━━──⊷\n` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
