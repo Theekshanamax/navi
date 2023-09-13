@@ -64,7 +64,7 @@ const os = require('os')
  ┃  ╰┬─────◈💕◈──────» 
  ┃  ┌┤\n` 
                      for (const plugins of cmds[category]) { 
-                         str += `┃  │ ◉ ${plugins}\n` 
+                         str += `┃  │ 🧚 ${plugins}\n` 
                      } 
                      str += `┃  ╰────────────◆` 
                  } 
@@ -216,7 +216,7 @@ const os = require('os')
                  let total = await sck1.countDocuments() 
                                   let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n` 
                  str += 
-                     '```' + `│ ╭──────◇🍧◇──────« 
+                     '```' + `│ ╭──────◇🦁◇──────« 
  │ │ 👤User:- ${citel.pushName} 
  │ │ 💝Theme:- ${tlang().title} 
  │ │ 🦁Owner:- ${vdf} 
@@ -235,7 +235,7 @@ const os = require('os')
  ┃  ╰┬─────◈💕◈──────» 
  ┃  ┌┤\n` 
                      for (const plugins of cmds[category]) { 
-                         str += `┃  │ ◉ ${plugins}\n` 
+                         str += `┃  │ 🧚 ${plugins}\n` 
                      } 
                      str += `┃  ╰────────────◆` 
                  } 
