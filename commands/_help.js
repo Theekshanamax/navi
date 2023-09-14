@@ -51,18 +51,21 @@ Secktor.cmd({
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 const vdf = Config.ownername
                 let total = await sck1.countDocuments()
-                                 let str = `╭────《 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 》─────⊷\n`
+                                 let str = `◯───────[` + fancytext(Config.ownername.split(' ')[0], 58) + ` ]───────◯\n`
                 str +=
-                    '```' + `│ ╭──────◇🦁◇──────«
-│ │ 👤User:- ${citel.pushName}
-│ │ 💝Theme:- ${tlang().title}
-│ │ 🎧Owner:- ${vdf}
-│ │ 🎵Plugins:- ${commands.length}
-│ │ 🧓Users:- ${total}
-│ │ 🆙Uptime:- ${runtime(process.uptime())}
-│ │ Ⓜ️Mem:- ${formatp(os.totalmem() - os.freemem())}
-│ ╰──────●💕●──────»
-╰───────────────⊷\n
+                    '```' + `
+💝𝚄𝚜𝚎𝚛:- ${citel.pushName}
+💝𝚃𝚑𝚎𝚖𝚎:- ${tlang().title}
+💝𝙾𝚆𝚗𝚎𝚛:- ${vdf}
+💝𝙿𝚕𝚞𝚐𝚒𝚗𝚜:- ${commands.length}
+💝𝚄𝚂𝚎𝚛𝚜:- ${total}
+💝𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
+💝𝚁𝚊𝚖:- ${formatp(os.totalmem() - os.freemem())}
+
+🧑‍💻 : design of theekshana
+🎁 : official group = ' https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N '
+
+චූටි දේවල් වලට තරහ ගන්නව තමයි එහෙමයි කියල තමුසෙට ආදරේ නැතුව නෙවේනේ_  😚♥️
 ` + '```'
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
