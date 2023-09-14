@@ -65,7 +65,7 @@ Secktor.cmd({
 
 
 🧑‍💻 : Created by theekshana
-🎁 : official group =   https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N  
+🎁 : official group =  "  https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N  "
 
 චූටි දේවල් වලට තරහ ගන්නව තමයි එහෙමයි කියල තමුසෙට ආදරේ නැතුව නෙවේනේ 😚♥️
 
