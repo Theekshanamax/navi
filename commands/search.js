@@ -1,19 +1,11 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
 
 const moment = require('moment-timezone')
 const {fetchJson,cmd, tlang } = require('../lib')
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
+const Esana = require('@sl-code-lords/esana-news')
+var api = new Esana()
 
     //---------------------------------------------------------------------------
 cmd({
@@ -177,7 +169,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: `_Sector Image Search_\n*${name1}*`,
+                        caption: `_Blue-Lion Image Search_\n*${name1}*`,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
@@ -187,6 +179,145 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+ 
+ cmd({  
+      pattern: "nasa",  
+      alias: ["news/nasa"],  
+      react: "🀄",  
+      desc: "",  
+      category: "news",  
+      use: '.hirunews',  
+      filename: __filename  
+  },  
+  async(Void, citel) => {  
+  try{  
+  const nasa = await fetchJson(`https://darkapi--technicalhacke4.repl.co/nasanews`);  
+  
+            const images = `${nasa.result.image}`  
+             const title = `${nasa.result.title}` 
+             const news = `${nasa.result.desc}`  
+  
+  await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
+  }  
+  catch(e){  
+  console.log(e)  
+  }})
+//---------------------------------------
+cmd({ 
+     pattern: "technews", 
+     react: "🧾", 
+     desc: "", 
+     category: "news", 
+     use: '.technews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+ try{ 
+ const technews = await fetchJson(`http://darkapi.technicalhacke4.repl.co/sinhala-technews`); 
+  
+  
+           
+  
+            const images = `${technews.result.img}` 
+            const title = `${technews.result.title}` 
+            const news = `${technews.result.decs}` 
+  
+ await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n`}, { quoted: citel }) 
+ } 
+ catch(e){ 
+ console.log(e) 
+ }})
+//-------------------------------------
+    cmd({
+        pattern: "news/esana",
+        category: "news",
+        desc: "Searches news",
+        use: '<text>',
+        filename: __filename,
+    },
+    async(Void, citel) => {
+       let res = await api.latest_id();
+       const nid = res.results.news_id;
+       let news = await api.news(nid);
+       const tt = news.results.TITLE;
+       const dss = news.results.DESCRIPTION;
+       const ttime = news.results.PUBLISHED;
+       const img = news.results.COVER;
+       const cap = `✦ 𝚃𝚒𝚝𝚕𝚎 :- ${tt} \n \n ◇ ᴅᴇꜱᴄʀᴇᴘᴛɪᴏɴ :- ${dss} \n \n ◈ ᴛɪᴍᴇ :- ${ttime}`;
+                await Void.sendMessage(citel.chat,{image:{url: img}, caption: cap}) 
+})
+//--------------------------------------------------------------------------
+cmd({ 
+     pattern: "hirunews", 
+     alias: ["hiru","news/hiru"], 
+     react: "📜", 
+     desc: "", 
+     category: "news", 
+     use: '.hirunews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+ try{ 
+ const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
+           const images = `${hirunews.image}` 
+            const title = `${hirunews.title}` 
+            const date = `${hirunews.time}` 
+            const news = `${hirunews.desc}` 
+  
+ await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n${ title }\n\n ${ news }\n\n${date}`}, { quoted: citel }) 
+ } 
+ catch(e){ 
+ console.log(e) 
+ }})
+//------------------------------------------------------------------------------------------------------------------------------------
+function lastn() {
+  try{ 
+ const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
+           const images1 = `${hirunews.image}` 
+            const title1 = `${hirunews.title}`
+            const id = `${hirunews.id}`
+            const date1 = `${hirunews.time}` 
+            const news1 = `${hirunews.desc}` 
+           } 
+ catch(e){ 
+ console.log(e) 
+ }
+}
+//------------------------------------------------------------------------------------------------------------------------------------
+cmd({ 
+     pattern: "hirunews/loop", 
+     alias: ["news/on","news/loop"], 
+     react: "📜", 
+     desc: "", 
+     category: "news", 
+     use: '.hirunews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+  let newson = "on"
+  await citel.reply("*News Lopp on*") 
+  let nchat = citel.chat;
+  while (newson == "on") {
+  lastn() 
+   if(id = lastid){
+    console.log("not a news")
+   }
+   else{
+    await Void.sendMessage(nchat,  { image: { url: images1 }, caption: `\n${ title1 }\n\n ${ news1 }\n\n${date1}`}) 
+   let lastid = id ;
+   }  
+}
+ })
+//-----------------------------------------------------------------------------------------------------------
+cmd({
+  pattern: 'news/off',
+  desc: 'off news loop',
+  category: 'news',
+  use: '<does this>',
+}, async (Void,citel,text) => {
+ let newson = "off"
+await citel.reply("*News Lopp Off*") 
+});
 cmd({
             pattern: "couplepp",
             category: "search",
