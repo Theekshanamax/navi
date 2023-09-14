@@ -154,6 +154,48 @@ cmd({
         })
     }
 )
+//-------------------------------------
+    cmd({
+        pattern: "news/esana",
+        category: "news",
+        desc: "Searches news",
+        use: '<text>',
+        filename: __filename,
+    },
+    async(Void, citel) => {
+       let res = await api.latest_id();
+       const nid = res.results.news_id;
+       let news = await api.news(nid);
+       const tt = news.results.TITLE;
+       const dss = news.results.DESCRIPTION;
+       const ttime = news.results.PUBLISHED;
+       const img = news.results.COVER;
+       const cap = `✦ 𝚃𝚒𝚝𝚕𝚎 :- ${tt} \n \n ◇ ᴅᴇꜱᴄʀᴇᴘᴛɪᴏɴ :- ${dss} \n \n ◈ ᴛɪᴍᴇ :- ${ttime}`;
+                await Void.sendMessage(citel.chat,{image:{url: img}, caption: cap}) 
+})
+//--------------------------------------------------------------------------
+cmd({ 
+     pattern: "hirunews", 
+     alias: ["hiru","news/hiru"], 
+     react: "📜", 
+     desc: "", 
+     category: "news", 
+     use: '.hirunews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+ try{ 
+ const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
+           const images = `${hirunews.image}` 
+            const title = `${hirunews.title}` 
+            const date = `${hirunews.time}` 
+            const news = `${hirunews.desc}` 
+  
+ await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n${ title }\n\n ${ news }\n\n${date}`}, { quoted: citel }) 
+ } 
+ catch(e){ 
+ console.log(e) 
+ }})
     //---------------------------------------------------------------------------
 cmd({
             pattern: "image",
