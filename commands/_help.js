@@ -57,15 +57,18 @@ Secktor.cmd({
 💝𝚄𝚜𝚎𝚛:- ${citel.pushName}
 💝𝚃𝚑𝚎𝚖𝚎:- ${tlang().title}
 💝𝙾𝚆𝚗𝚎𝚛:- ${vdf}
-💝𝙿𝚕𝚞𝚐𝚒𝚗𝚜:- ${commands.length}
-💝𝚄𝚂𝚎𝚛𝚜:- ${total}
+💝commands :- ${commands.length}
 💝𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
 💝𝚁𝚊𝚖:- ${formatp(os.totalmem() - os.freemem())}
+💝Time:- ${time}
+💝Date:- ${date}
 
-🧑‍💻 : design of theekshana
-🎁 : official group = ' https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N '
 
-චූටි දේවල් වලට තරහ ගන්නව තමයි එහෙමයි කියල තමුසෙට ආදරේ නැතුව නෙවේනේ_  😚♥️
+🧑‍💻 : Created by theekshana
+🎁 : official group =   https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N  
+
+චූටි දේවල් වලට තරහ ගන්නව තමයි එහෙමයි කියල තමුසෙට ආදරේ නැතුව නෙවේනේ 😚♥️
+
 ` + '```'
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
