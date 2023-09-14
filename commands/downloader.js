@@ -17,7 +17,8 @@ const fs = require('fs-extra')
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
 /*
-    //---------------------------------------------------------------------------
+  
+   //---------------------------------------------------------------------------
 cmd({
             pattern: "tgs",
             desc: "Downloads telegram stickers.",
@@ -249,6 +250,112 @@ cmd({
                 console.log(e)
             }
         })
+ //--------------------------------------------------------------------------- 
+cmd({ 
+   pattern: 'apk', 
+   desc: 'Download APK', 
+   category: 'downloader', 
+   use:'<does this>', 
+ }, async(Void,citel,text) => { 
+ const args = text; 
+ let search1 = await apks.search(args); 
+ const id1 = search1[0].id ; 
+ const apkname = search1[0].name ; 
+ let apkdata = await apks.download(id1); 
+ const dla = apkdata.dllink; 
+ const icona = apkdata.icon; 
+ const lastup = apkdata.lastup; 
+ const size = apkdata.size;
+
+ var rep = `* 💝APK Downloader💝*
+
+*🔍 Name :* ${apkname}
+
+*🎁 Package Name :* ${id1}
+
+*🧑‍💻 Update On :* ${lastup}
+
+*🔥 Size :* ${size}` ;
+
+*ඉක්මන් ට දෙනො සුදු😍*
+ 
+await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
+ return Void.sendMessage(citel.chat,{ 
+     document: { 
+         url: dla, 
+     }, 
+     fileName: apkname+'.apk', 
+     mimetype: "application/vnd.android.package-archive", 
+ }, { 
+     quoted: citel, 
+ }) 
+});
+//-------------------------------------------------------------------------- 
+  
+ cmd({ 
+             pattern: "facebook", 
+             alias :  ['fb','fbdl'], 
+             desc: "Downloads fb videos  .", 
+             category: "downloader", 
+             filename: __filename, 
+             use: '<add fb url.>' 
+         }, 
+  
+         async(Void, citel, text) => { 
+ Void.sendMessage(citel.chat, {  
+               react: {  
+                   text: "🧑‍✈️",  
+                   key: citel.key  
+               }  
+           })  
+ if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`); 
+ fbInfoVideo.getInfo(text) 
+   .then(info =>{ 
+ let vurl=info.video.url_video; 
+  
+       let data  ="*Video Name     :* "+  info.video.title; 
+           data +="\n*Video Views    :* "+  info.video.view; 
+           data +="\n*Video Comments :* "+  info.video.comment; 
+           data +="\n*Video Likes    :* "+info.video.reaction.Like ; 
+  
+                         let buttonMessage = { 
+                         video: {url:vurl}, 
+                         mimetype: 'video/mp4', 
+                         fileName: info.video.title+`.mp4`, 
+                         caption :"     *FACEBOOK DOWNLOADER*  \n"+data 
+  
+                     } 
+                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+  
+  
+  
+ }) 
+   .catch(err =>{ 
+             citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*"); 
+             console.error(err); 
+           }) 
+  }) 
+  
+ //--------------------------------------------------------------------------- 
+  
+ cmd({ 
+             pattern: "tiktok", 
+                   alias :  ['tt','ttdl'], 
+             desc: "Downloads Tiktok Videos Via Url.", 
+             category: "downloader", 
+             filename: __filename, 
+             use: '<add tiktok url.>' 
+         }, 
+  
+         async(Void, citel, text) => { 
+  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
+  let txt = text ? text.split(" ")[0]:''; 
+  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
+  const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
+  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio ) 
+  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel }); 
+  else return await citel.reply("Error While Downloading Your Video")  
+ }) 
     //---------------------------------------------------------------------------
 cmd({
             pattern: "mediafire",
