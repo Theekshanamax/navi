@@ -20,7 +20,7 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "Help list",
             category: "general",
-            react: "📝",
+            react: "💝",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -99,29 +99,34 @@ Secktor.cmd({
             pattern: "list",
             desc: "list menu",
             category: "general",
-            react: "📜"
+            react: "💖"
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
             const vdf = Config.ownername
             let str = `
-╭━━🦋 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 🦋━━──⊷`
+◯───────[ ` + fancytext(Config.ownername.split(' ')[0], 58) + `  ]───────◯`
             str += '```' + `
-┃       
-┃ 👤User: ${citel.pushName}
-┃ 💝Theme: ${tlang().title}
-┃ 🦋Prefix: ${prefix}
-┃ 🦁Owner: ${vdf}
-┃ 🎁Commands: ${commands.length}
-┃ ⏳Uptime: ${runtime(process.uptime())}
-┃ 🍏Mem: ${formatp(os.totalmem() - os.freemem())}
-┃  
-╰━━━━━━━━━━━━━━━━━━──⊷\n` + '```'
+       
+💝User: ${citel.pushName}
+💝Theme: ${tlang().title}
+💝Prefix: ${prefix}
+💝Owner: ${vdf}
+💝Commands: ${commands.length}
+💝Uptime: ${runtime(process.uptime())}
+💝Ram: ${formatp(os.totalmem() - os.freemem())}
+
+🧑‍💻 : Created by theekshana
+🎁 : official group =  "  https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N  "
+
+චූටි දේවල් වලට තරහ ගන්නව තමයි එහෙමයි කියල තමුසෙට ආදරේ නැතුව නෙවේනේ 😚♥️
+
+` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
-     str += `📗 ◉ ${fancytext(commands[i].pattern,1)}\n` 
-     str += `🍁 ${fancytext(commands[i].desc,1)}\n\n`
+     str += `🦁 ◉ ${fancytext(commands[i].pattern,1)}\n` 
+     str += `💝 ${fancytext(commands[i].desc,1)}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
