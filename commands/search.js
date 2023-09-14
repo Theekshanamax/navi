@@ -183,7 +183,7 @@ cmd({
  cmd({  
       pattern: "nasa",  
       alias: ["news/nasa"],  
-      react: "🀄",  
+      react: "🔭",  
       desc: "",  
       category: "news",  
       use: '.hirunews',  
@@ -250,7 +250,7 @@ cmd({
 cmd({ 
      pattern: "hirunews", 
      alias: ["hiru","news/hiru"], 
-     react: "📜", 
+     react: "📺", 
      desc: "", 
      category: "news", 
      use: '.hirunews', 
@@ -287,7 +287,7 @@ function lastn() {
 cmd({ 
      pattern: "hirunews/loop", 
      alias: ["news/on","news/loop"], 
-     react: "📜", 
+     react: "📺", 
      desc: "", 
      category: "news", 
      use: '.hirunews', 
