@@ -17,8 +17,7 @@ const fs = require('fs-extra')
 var videotime = 60000 // 1000 min
 var dlsize = 1000 // 1000mb
 /*
-  
-   //---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
 cmd({
             pattern: "tgs",
             desc: "Downloads telegram stickers.",
@@ -93,63 +92,67 @@ cmd({
     }
 )
     //---------------------------------------------------------------------------
-cmd({ 
-             pattern: "video", 
-             desc: "Downloads video from yt.", 
-             category: "downloader", 
-             filename: __filename, 
-             use: '<faded-Alan Walker>', 
-         }, 
-         async(Void, citel, text) => { 
- Void.sendMessage(citel.chat, {  
-               react: {  
-                   text: "📽️",  
-                   key: citel.key  
-               }  
-           })  
-             let yts = require("secktor-pack"); 
-             let search = await yts(text); 
-             let anu = search.videos[0]; 
-             let urlYt = anu.url 
-             const getRandom = (ext) => { 
-                 return `${Math.floor(Math.random() * 10000)}${ext}`; 
-             }; 
-                 let infoYt = await ytdl.getInfo(urlYt); 
-                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
-                 let titleYt = infoYt.videoDetails.title; 
-                 let randomName = getRandom(".mp4"); 
-                 citel.reply('📥 Downloadig Your Video.') 
-                 const stream = ytdl(urlYt, { 
-                         filter: (info) => info.itag == 22 || info.itag == 18, 
-                     }) 
-                     .pipe(fs.createWriteStream(`./${randomName}`)); 
-                 await new Promise((resolve, reject) => { 
-                     stream.on("error", reject); 
-                     stream.on("finish", resolve); 
-                 }); 
-                 let stats = fs.statSync(`./${randomName}`); 
-                 let fileSizeInBytes = stats.size; 
-                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
-                 if (fileSizeInMegabytes <= dlsize) { 
-  
-                         let buttonMessage = {  
-                          video: fs.readFileSync(`./${randomName}`),  
-                          mimetype: 'video/mp4',  
-                          fileName: `${titleYt}.mp4`, 
-                          caption: ` 💖 Title : ${titleYt}\n 🎁 File Size : ${fileSizeInMegabytes} MB`, 
-  
-                      }  
-                   Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
-  
-                  return fs.unlinkSync(`./${randomName}`); 
-                 } else { 
-                     citel.reply(`🥺 File size bigger than 100mb.`); 
-                 } 
-                 return fs.unlinkSync(`./${randomName}`);       
-  
-  
-         } 
-     ) 
+cmd({
+            pattern: "video",
+            desc: "Downloads video from yt.",
+            category: "downloader",
+            filename: __filename,
+            use: '<faded-Alan Walker>',
+        },
+        async(Void, citel, text) => {
+            let yts = require("secktor-pack");
+            let search = await yts(text);
+            let anu = search.videos[0];
+            let urlYt = anu.url
+            const getRandom = (ext) => {
+                return `${Math.floor(Math.random() * 10000)}${ext}`;
+            };
+                let infoYt = await ytdl.getInfo(urlYt);
+                if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
+                let titleYt = infoYt.videoDetails.title;
+                let randomName = getRandom(".mp4");
+                citel.reply('*Downloadig:* '+titleYt)
+                const stream = ytdl(urlYt, {
+                        filter: (info) => info.itag == 22 || info.itag == 18,
+                    })
+                    .pipe(fs.createWriteStream(`./${randomName}`));
+                await new Promise((resolve, reject) => {
+                    stream.on("error", reject);
+                    stream.on("finish", resolve);
+                });
+                let stats = fs.statSync(`./${randomName}`);
+                let fileSizeInBytes = stats.size;
+                let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024);
+                if (fileSizeInMegabytes <= dlsize) {
+                    let buttonMessage = {
+                        video: fs.readFileSync(`./${randomName}`),
+                        jpegThumbnail: log0,
+                        mimetype: 'video/mp4',
+                        fileName: `${titleYt}.mp4`,
+                        caption: ` ⿻ Title : ${titleYt}\n ⿻ File Size : ${fileSizeInMegabytes} MB`,
+                        headerType: 4,
+                        contextInfo: {
+                            externalAdReply: {
+                                title: titleYt,
+                                body: citel.pushName,
+                                thumbnail: await getBuffer(search.all[0].thumbnail),
+                                renderLargerThumbnail: true,
+                                mediaType: 2,
+                                mediaUrl: search.all[0].thumbnail,
+                                sourceUrl: search.all[0].thumbnail
+                            }
+                        }
+                    }
+                 Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+                 return fs.unlinkSync(`./${randomName}`);
+                } else {
+                    citel.reply(`❌ File size bigger than 100mb.`);
+                }
+                return fs.unlinkSync(`./${randomName}`);      
+
+
+        }
+    )
     //---------------------------------------------------------------------------
 cmd({
             pattern: "play",
@@ -246,112 +249,6 @@ cmd({
                 console.log(e)
             }
         })
- //--------------------------------------------------------------------------- 
-cmd({ 
-   pattern: 'apk', 
-   desc: 'Download APK', 
-   category: 'downloader', 
-   use:'<does this>', 
- }, async(Void,citel,text) => { 
- const args = text; 
- let search1 = await apks.search(args); 
- const id1 = search1[0].id ; 
- const apkname = search1[0].name ; 
- let apkdata = await apks.download(id1); 
- const dla = apkdata.dllink; 
- const icona = apkdata.icon; 
- const lastup = apkdata.lastup; 
- const size = apkdata.size;
-
- var rep = `* 💝APK Downloader💝*
-
-*🔍 Name :* ${apkname}
-
-*🎁 Package Name :* ${id1}
-
-*🧑‍💻 Update On :* ${lastup}
-
-*🔥 Size :* ${size}` ;
-
-*ඉක්මන් ට දෙනො සුදු😍*
- 
-await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
- return Void.sendMessage(citel.chat,{ 
-     document: { 
-         url: dla, 
-     }, 
-     fileName: apkname+'.apk', 
-     mimetype: "application/vnd.android.package-archive", 
- }, { 
-     quoted: citel, 
- }) 
-});
-//-------------------------------------------------------------------------- 
-  
- cmd({ 
-             pattern: "facebook", 
-             alias :  ['fb','fbdl'], 
-             desc: "Downloads fb videos  .", 
-             category: "downloader", 
-             filename: __filename, 
-             use: '<add fb url.>' 
-         }, 
-  
-         async(Void, citel, text) => { 
- Void.sendMessage(citel.chat, {  
-               react: {  
-                   text: "🧑‍✈️",  
-                   key: citel.key  
-               }  
-           })  
- if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`); 
- fbInfoVideo.getInfo(text) 
-   .then(info =>{ 
- let vurl=info.video.url_video; 
-  
-       let data  ="*Video Name     :* "+  info.video.title; 
-           data +="\n*Video Views    :* "+  info.video.view; 
-           data +="\n*Video Comments :* "+  info.video.comment; 
-           data +="\n*Video Likes    :* "+info.video.reaction.Like ; 
-  
-                         let buttonMessage = { 
-                         video: {url:vurl}, 
-                         mimetype: 'video/mp4', 
-                         fileName: info.video.title+`.mp4`, 
-                         caption :"     *FACEBOOK DOWNLOADER*  \n"+data 
-  
-                     } 
-                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
-  
-  
-  
- }) 
-   .catch(err =>{ 
-             citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*"); 
-             console.error(err); 
-           }) 
-  }) 
-  
- //--------------------------------------------------------------------------- 
-  
- cmd({ 
-             pattern: "tiktok", 
-                   alias :  ['tt','ttdl'], 
-             desc: "Downloads Tiktok Videos Via Url.", 
-             category: "downloader", 
-             filename: __filename, 
-             use: '<add tiktok url.>' 
-         }, 
-  
-         async(Void, citel, text) => { 
-  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
-  let txt = text ? text.split(" ")[0]:''; 
-  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
-  const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
-  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio ) 
-  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel }); 
-  else return await citel.reply("Error While Downloading Your Video")  
- }) 
     //---------------------------------------------------------------------------
 cmd({
             pattern: "mediafire",
