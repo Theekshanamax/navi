@@ -33,7 +33,7 @@ cmd({
 
         }
     )
-//---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
 cmd({
             pattern: "sticker",
             alias: ["s"],
@@ -91,7 +91,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N`,
+            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
         });
 
     }
@@ -359,15 +359,14 @@ cmd({
                 pfp = await botpic();
             }
             const profile = `
-🧑‍💻 ඔය ගැන මං මොනාද කියන්න ඕන 😉
-
-*💝Username:* ${citel.pushName}
-*💝Bio:* ${bioo}
-*💝Level:* ${userq.level}
-*💝Total Messages* ${ttms}
-*💝Powered by ${tlang().title}*
-
-💌 ඔයට තව මොනවා ද කියන්න ඕන සුදු😍
+*Hii ${citel.pushName},*
+*Here is your profile information*
+*👤Username:* ${citel.pushName}
+*⚡Bio:* ${bioo}
+*🧩Role:* ${role}
+*🍁Level:* ${userq.level}
+*📥 Total Messages* ${ttms}
+*Powered by ${tlang().title}*
 `;
             let buttonMessage = {
                 image: {
@@ -987,15 +986,15 @@ cmd({ on: "text" }, async(Void, citel) => {
                     url: await botpic(),
                 },
                 caption: `
-*💝Bot commands#: ${commands.length}
-*💝Owner*: ${Config.ownername}
-*💝Name*: ${citel.pushName}
-*💝Level*: ${sck1.level}
-
-*🧑‍💻* *Created by Theekshana*
-*🎁* *official* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
-
-අපි රගන්න යන්නැති නිසා උන් හිතන්නෙ අපි හාවො කියල_ 🐰😮‍💨 _රගන උන් හිතන් ඉන්නෙ උන් හෙන කැ# කියලා_🙌
+╔════◇
+║ *Wow,Someone just*
+║ *leveled Up huh⭐*
+║ *👤Name*: ${citel.pushName}
+║ *🎐Level*: ${sck1.level}🍭
+║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+║ *📍Role*: *${role}*
+║ *Enjoy🥳*
+╚════════════╝
 `,
             }, {
                 quoted: citel,
