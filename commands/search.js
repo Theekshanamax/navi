@@ -154,25 +154,222 @@ cmd({
         })
     }
 )
-//-------------------------------------
-    cmd({
-        pattern: "news/esana",
-        category: "news",
-        desc: "Searches news",
-        use: '<text>',
-        filename: __filename,
-    },
-    async(Void, citel) => {
-       let res = await api.latest_id();
-       const nid = res.results.news_id;
-       let news = await api.news(nid);
-       const tt = news.results.TITLE;
-       const dss = news.results.DESCRIPTION;
-       const ttime = news.results.PUBLISHED;
-       const img = news.results.COVER;
-       const cap = `✦ 𝚃𝚒𝚝𝚕𝚎 :- ${tt} \n \n ◇ ᴅᴇꜱᴄʀᴇᴘᴛɪᴏɴ :- ${dss} \n \n ◈ ᴛɪᴍᴇ :- ${ttime}`;
-                await Void.sendMessage(citel.chat,{image:{url: img}, caption: cap}) 
-})
+//--------------------------------------------------------------------------- 
+       
+
+cmd({ 
+   pattern: 'apk', 
+   desc: 'Download APK', 
+   category: 'downloader', 
+   use:'<does this>', 
+ }, async(Void,citel,text) => { 
+ const args = text; 
+ let search1 = await apks.search(args); 
+ const id1 = search1[0].id ; 
+ const apkname = search1[0].name ; 
+ let apkdata = await apks.download(id1); 
+ const dla = apkdata.dllink; 
+ const icona = apkdata.icon; 
+ const lastup = apkdata.lastup; 
+ const size = apkdata.size;
+
+ var rep = `* 📱APK Downloader📱*
+
+*🔍 Name :* ${apkname}
+
+*📀 Package Name :* ${id1}
+
+*📲 Update On :* ${lastup}
+
+*📊 Size :* ${size}` ;
+
+await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
+ return Void.sendMessage(citel.chat,{ 
+     document: { 
+         url: dla, 
+     }, 
+     fileName: apkname+'.apk', 
+     mimetype: "application/vnd.android.package-archive", 
+ }, { 
+     quoted: citel, 
+ }) 
+});
+//--------------------------------------------------------------------------- 
+ cmd({ 
+     pattern: "songdoc", 
+     alias :['audiodoc','song2'], 
+     desc: "Downloads audio from youtube.", 
+     category: "downloader", 
+     filename: __filename, 
+     use: '<text>', 
+ }, 
+ async(Void, citel, text) => { 
+     let yts = require("secktor-pack"); 
+     let search = await yts(text); 
+     let anu = search.videos[0]; 
+     const getRandom = (ext) => { 
+         return `${Math.floor(Math.random() * 10000)}${ext}`; 
+     }; 
+     let infoYt = await ytdl.getInfo(anu.url); 
+     if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
+     let titleYt = infoYt.videoDetails.title; 
+     let randomName = getRandom(".mp3"); 
+     citel.reply('📥 Downloadig Your Song.') 
+     const stream = ytdl(anu.url, { 
+             filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128, 
+         }) 
+         .pipe(fs.createWriteStream(`./${randomName}`)); 
+     await new Promise((resolve, reject) => { 
+         stream.on("error", reject); 
+         stream.on("finish", resolve); 
+     }); 
+  
+     let stats = fs.statSync(`./${randomName}`); 
+     let fileSizeInBytes = stats.size; 
+     let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
+     if (fileSizeInMegabytes <= dlsize) { 
+  
+ let buttonMessag1e = { 
+             document: fs.readFileSync(`./${randomName}`), 
+             mimetype: 'audio/mpeg', 
+             fileName: titleYt + ".mp3", 
+             headerType: 4, 
+             contextInfo: { 
+                 externalAdReply: { 
+                     title: titleYt, 
+                     body: citel.pushName, 
+                     renderLargerThumbnail: true, 
+                     thumbnailUrl: search.all[0].thumbnail, 
+                     mediaUrl: text, 
+                     mediaType: 1, 
+                     thumbnail: await getBuffer(search.all[0].thumbnail), 
+                     sourceUrl: text, 
+                 }, 
+             }, 
+         } 
+ Void.sendMessage(citel.chat, buttonMessag1e, { quoted: citel }) 
+         return fs.unlinkSync(`./${randomName}`); 
+     } else { 
+         citel.reply(`❌ File size bigger than 100mb.`); 
+     } 
+     fs.unlinkSync(`./${randomName}`); 
+  
+ } 
+ ) 
+//-------------------------------------------------------------------------- 
+  
+ cmd({ 
+             pattern: "facebook", 
+             alias :  ['fb','fbdl'], 
+             desc: "Downloads fb videos  .", 
+             category: "downloader", 
+             filename: __filename, 
+             use: '<add fb url.>' 
+         }, 
+  
+         async(Void, citel, text) => { 
+ Void.sendMessage(citel.chat, {  
+               react: {  
+                   text: "🎬",  
+                   key: citel.key  
+               }  
+           })  
+ if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`); 
+ fbInfoVideo.getInfo(text) 
+   .then(info =>{ 
+ let vurl=info.video.url_video; 
+  
+       let data  ="*Video Name     :* "+  info.video.title; 
+           data +="\n*Video Views    :* "+  info.video.view; 
+           data +="\n*Video Comments :* "+  info.video.comment; 
+           data +="\n*Video Likes    :* "+info.video.reaction.Like ; 
+  
+                         let buttonMessage = { 
+                         video: {url:vurl}, 
+                         mimetype: 'video/mp4', 
+                         fileName: info.video.title+`.mp4`, 
+                         caption :"     *FACEBOOK DOWNLOADER*  \n"+data 
+  
+                     } 
+                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+  
+  
+  
+ }) 
+   .catch(err =>{ 
+             citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*"); 
+             console.error(err); 
+           }) 
+  }) 
+//--------------------------------------------------------------------------- 
+ cmd({ 
+             pattern: "song", 
+             alias :['audio'], 
+             desc: "Downloads audio from youtube.", 
+             category: "downloader", 
+             filename: __filename, 
+             use: '<text>', 
+         }, 
+         async(Void, citel, text) => { 
+ Void.sendMessage(citel.chat, {  
+               react: {  
+                   text: "🎧",  
+                   key: citel.key  
+               }  
+           })  
+             let yts = require("secktor-pack"); 
+             let search = await yts(text); 
+             let anu = search.videos[0]; 
+             const getRandom = (ext) => { 
+                 return `${Math.floor(Math.random() * 10000)}${ext}`; 
+             }; 
+             let infoYt = await ytdl.getInfo(anu.url); 
+             if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
+             let titleYt = infoYt.videoDetails.title; 
+             let randomName = getRandom(".mp3"); 
+             citel.reply('📥 Downloadig Your Song.') 
+             const stream = ytdl(anu.url, { 
+                     filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128, 
+                 }) 
+                 .pipe(fs.createWriteStream(`./${randomName}`)); 
+             await new Promise((resolve, reject) => { 
+                 stream.on("error", reject); 
+                 stream.on("finish", resolve); 
+             }); 
+  
+             let stats = fs.statSync(`./${randomName}`); 
+             let fileSizeInBytes = stats.size; 
+             let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
+             if (fileSizeInMegabytes <= dlsize) { 
+                 let buttonMessage = { 
+                     audio: fs.readFileSync(`./${randomName}`), 
+                     mimetype: 'audio/mpeg', 
+                     fileName: titleYt + ".mp3", 
+                     headerType: 4, 
+                     contextInfo: { 
+                         externalAdReply: { 
+                             title: titleYt, 
+                             body: citel.pushName, 
+                             renderLargerThumbnail: true, 
+                             thumbnailUrl: search.all[0].thumbnail, 
+                             mediaUrl: text, 
+                             mediaType: 1, 
+                             thumbnail: await getBuffer(search.all[0].thumbnail), 
+                             sourceUrl: text, 
+                         }, 
+                     }, 
+                 } 
+ Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }) 
+                 return fs.unlinkSync(`./${randomName}`); 
+             } else { 
+                 citel.reply(`❌ File size bigger than 100mb.`); 
+             } 
+             fs.unlinkSync(`./${randomName}`); 
+  
+  
+  
+         } 
+     ) 
 //---------------------------------------------------------------------------
  
  cmd({  
