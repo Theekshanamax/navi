@@ -54,7 +54,7 @@ Secktor.cmd({
                                  let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
                 str +=
                     '```' + `
-🫅 𝚃𝚑𝚎𝚖𝚎:- ${tlang().tit
+🫅 Theme: ${tlang().title} 
 🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
 ✨ commands :- ${commands.length}
 ⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
@@ -175,7 +175,7 @@ Secktor.cmd({
             const vdf = Config.ownername
             let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
             str += '```' + `
-🫅 𝚃𝚑𝚎𝚖𝚎:- ${tlang().tit
+🫅 𝚃𝚑𝚎𝚖𝚎:- Theme: ${tlang().title}
 🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
 ✨ commands :- ${commands.length}
 ⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
