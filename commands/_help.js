@@ -147,7 +147,7 @@ Secktor.cmd({
 │  ╰┬─────◈🇱🇰◈──────»
 │  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `│  │ 🫅 ${plugins}\n`
+                        str += `│  │ 🥷 ${plugins}\n`
                     }
                     str += `│  ╰────────────◆`
                 }
@@ -189,7 +189,7 @@ Secktor.cmd({
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
-     str += ` ◉ ${fancytext(commands[i].pattern,1)}\n` 
+     str += `🇱🇰 ◉ ${fancytext(commands[i].pattern,1)}\n` 
      str += `💝 ${fancytext(commands[i].desc,1)}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
