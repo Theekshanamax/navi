@@ -354,9 +354,7 @@ cmd({
                     headerType: 4
                  };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
-            }
-        }
-    )
+            })
 //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "list",
