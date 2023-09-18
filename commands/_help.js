@@ -98,7 +98,6 @@ Secktor.cmd({
             pattern: "මෙනු",
             alias: ["මෙනු, විධාන,නියොග"],
             desc: "විධාන ලයිස්තුව",
-            category: "general",
             react: "🇱🇰",
             filename: __filename
         },
@@ -207,7 +206,6 @@ for (let i = 0; i < commands.length; i++)
 Secktor.cmd({
         pattern: "ලොක්කා",
         desc: "To find owner number",
-        category: "general",
         react: "😘",
         filename: __filename
     },
