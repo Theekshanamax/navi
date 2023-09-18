@@ -54,6 +54,7 @@ Secktor.cmd({
                                  let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
                 str +=
                     '```' + `
+                    
 🫅 Theme: ${tlang().title} 
 🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
 ✨ commands :- ${commands.length}
@@ -61,19 +62,22 @@ Secktor.cmd({
 ⏰ Time:- ${time}
 📅 Date:- ${date}
 
-*🫅Hello I'm KING-X🫅*
+
+🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
  🫴how can I help you
+
+ 🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 𝗧𝗵𝗲𝗲𝗸𝘀𝗵𝗮𝗻𝗮
 
 ` + '```'
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
                     str += `
 │  ╭──────◑🫅◑──────«
-│  │      ❤️ ${tiny(category)} ❤️
+│  │        ❤️ ${tiny(category)} ❤️
 │  ╰┬─────◈🇱🇰◈──────»
 │  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `│  │ 👨‍🔧 ${plugins}\n`
+                        str += `│  │ 💃 ${plugins}\n`
                     }
                     str += `│  ╰────────────◆`
                 }
@@ -135,9 +139,10 @@ Secktor.cmd({
 ⏰ වෙලාව: ${time}
 📅 දිනය: ${date}
 
-*🫅හලො මිනිසා මං KING-X🫅*
+*🫅හලො මනුෂ්‍යා මං KING-X🫅*
  🫴ඔබට කුමක් ද අවශ්‍ය අත වැලිය 
 
+🧑‍💻 *නිර්මාණය තීක්ෂණ*
 ` + '```'
                 str += `╭───『 ` + fancytext('Commands', 57) + `』──◆`
                 for (const category in cmds) {
@@ -147,7 +152,7 @@ Secktor.cmd({
 │  ╰┬─────◈🇱🇰◈──────»
 │  ┌┤\n`
                     for (const plugins of cmds[category]) {
-                        str += `│  │ 🥷 ${plugins}\n`
+                        str += `│  │ 🪂 ${plugins}\n`
                     }
                     str += `│  ╰────────────◆`
                 }
@@ -163,38 +168,41 @@ Secktor.cmd({
             }
         }
     )
-    //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "list",
             desc: "list menu",
             category: "general",
-            react: "💖"
+            react: "📜"
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
             const vdf = Config.ownername
-            let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
-            str += '```' + `
-🫅 𝚃𝚑𝚎𝚖𝚎:- Theme: ${tlang().title}
+            let str = `
+`*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
+   
+🫅 Theme: ${tlang().title} 
 🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
 ✨ commands :- ${commands.length}
 ⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
 ⏰ Time:- ${time}
 📅 Date:- ${date}
 
-*🫅Hello I'm KING-X🫅*
+🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
  🫴how can I help you
+
+ 🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 𝗧𝗵𝗲𝗲𝗸𝘀𝗵𝗮𝗻𝗮
  
 ` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
-     str += `🇱🇰 ◉ ${fancytext(commands[i].pattern,1)}\n` 
-     str += `💝 ${fancytext(commands[i].desc,1)}\n\n`
+     str += `📗 ◉ ${fancytext(commands[i].pattern,1)}\n` 
+     str += `🍁 ${fancytext(commands[i].desc,1)}\n\n`
 }
             return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
         }
-    ) 
+    )
     //---------------------------------------------------------------------------
 Secktor.cmd({
         pattern: "ලොක්කා",
@@ -237,7 +245,7 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "🦋",
+        react: "🧑‍💻",
         filename: __filename
     },
     async(Void, citel) => {
