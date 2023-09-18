@@ -177,8 +177,7 @@ Secktor.cmd({
         async(Void, citel) => {
             const { commands } = require('../lib');
             const vdf = Config.ownername
-            let str = `
-`*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
+            let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*
    
 🫅 Theme: ${tlang().title} 
 🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
