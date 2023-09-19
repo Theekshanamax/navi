@@ -58,6 +58,7 @@
                        "pastebin-js": "latest",
                        "fb-info-video":"^1.0.2",
                        "private-scraper": "latest",
+                       "aptoide-scraper": "latest",
                        "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
