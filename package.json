@@ -57,6 +57,7 @@
                        "ytdl-secktor": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch.2",
                        "pastebin-js": "latest",
                        "fb-info-video":"^1.0.2",
+                       "private-scraper": "latest",
                        "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
