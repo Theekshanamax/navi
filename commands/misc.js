@@ -19,6 +19,7 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
     pattern: "setwelcome",
     desc: "sets welcome message in specific group.",
     category: "misc",
+    react: "💐",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
@@ -38,6 +39,7 @@ cmd({
     pattern: "setgoodbye",
     desc: "sets goodbye message in specific group.",
     category: "misc",
+    react: "👋",
 },
 async(Void, citel, text,{ isCreator }) => {
     if (!isCreator) return citel.reply(tlang().owner)
