@@ -252,7 +252,7 @@ cmd({
 cmd({ 
      pattern: "hirunews", 
      alias: ["hiru","news/hiru"], 
-     react: "🗞️", 
+     react: "📜", 
      desc: "", 
      category: "news", 
      use: '.hirunews', 
