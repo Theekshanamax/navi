@@ -358,41 +358,7 @@ cmd({
                  };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             })
-//---------------------------------------------------------------------------
-Secktor.cmd({
-            pattern: "list",
-            desc: "list menu",
-            category: "general",
-            react: "📜"
-        },
-        async(Void, citel) => {
-            const { commands } = require('../lib');
-            const vdf = Config.ownername
-            let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*`
-                str +=
-                    '```' + `
-                    
-🫅 Theme: ${tlang().title} 
-🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
-✨ commands :- ${commands.length}
-⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
-⏰ Time:- ${time}
-📅 Date:- ${date}
 
-
-🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
- 🫴how can I help you
-
- 🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 𝗧𝗵𝗲𝗲𝗸𝘀𝗵𝗮𝗻𝗮 + '```'
-for (let i = 0; i < commands.length; i++) 
-{
-     if(commands[i].pattern==undefined) continue
-     str += `📗 ◉ ${fancytext(commands[i].pattern,1)}\n` 
-     str += `🍁 ${fancytext(commands[i].desc,1)}\n\n`
-}
-            return Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
-        }
-    )
     //---------------------------------------------------------------------------
 cmd({
         pattern: "ලොක්කා",
