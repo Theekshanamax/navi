@@ -209,32 +209,8 @@ cmd({
   catch(e){  
   console.log(e)  
   }})
-//---------------------------------------
-cmd({ 
-     pattern: "technews", 
-     react: "📰", 
-     desc: "", 
-     category: "news", 
-     use: '.technews', 
-     filename: __filename 
- }, 
- async(Void, citel) => { 
- try{ 
- const technews = await fetchJson(`http://darkapi.technicalhacke4.repl.co/sinhala-technews`); 
-  
-  
-           
-  
-            const images = `${technews.result.img}` 
-            const title = `${technews.result.title}` 
-            const news = `${technews.result.decs}` 
-  
- await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n`}, { quoted: citel }) 
- } 
- catch(e){ 
- console.log(e) 
- }})
-    //---------------------------------------------------------------------------
+
+//---------------------------------------------------------------------------
 cmd({
             pattern: "couplepp",
             category: "search",
@@ -252,7 +228,7 @@ cmd({
 cmd({ 
      pattern: "hirunews", 
      alias: ["hiru","news/hiru"], 
-     react: "📜", 
+     react: "🗞️", 
      desc: "", 
      category: "news", 
      use: '.hirunews', 
@@ -271,7 +247,8 @@ cmd({
  catch(e){ 
  console.log(e) 
  }})
-    //---------------------------------------------------------------------------
+ 
+//---------------------------------------------------------------------------
 cmd({
         pattern: "iswa",
         category: "search",
