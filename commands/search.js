@@ -209,6 +209,31 @@ cmd({
   catch(e){  
   console.log(e)  
   }})
+//---------------------------------------
+cmd({ 
+     pattern: "technews", 
+     react: "📰", 
+     desc: "", 
+     category: "news", 
+     use: '.technews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+ try{ 
+ const technews = await fetchJson(`http://darkapi.technicalhacke4.repl.co/sinhala-technews`); 
+  
+  
+           
+  
+            const images = `${technews.result.img}` 
+            const title = `${technews.result.title}` 
+            const news = `${technews.result.decs}` 
+  
+ await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n`}, { quoted: citel }) 
+ } 
+ catch(e){ 
+ console.log(e) 
+ }})
     //---------------------------------------------------------------------------
 cmd({
             pattern: "couplepp",
@@ -223,6 +248,29 @@ cmd({
             Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
         }
     )
+//--------------------------------------------------------------------------
+cmd({ 
+     pattern: "hirunews", 
+     alias: ["hiru","news/hiru"], 
+     react: "🗞️", 
+     desc: "", 
+     category: "news", 
+     use: '.hirunews', 
+     filename: __filename 
+ }, 
+ async(Void, citel) => { 
+ try{ 
+ const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
+           const images = `${hirunews.image}` 
+            const title = `${hirunews.title}` 
+            const date = `${hirunews.time}` 
+            const news = `${hirunews.desc}` 
+  
+ await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n${ title }\n\n ${ news }\n\n${date}`}, { quoted: citel }) 
+ } 
+ catch(e){ 
+ console.log(e) 
+ }})
     //---------------------------------------------------------------------------
 cmd({
         pattern: "iswa",
