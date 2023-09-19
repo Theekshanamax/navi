@@ -103,25 +103,25 @@ cmd({
         }
 
     )
-//--------------------------------------------------------------------------- 
+ //--------------------------------------------------------------------------- 
   
  cmd({ 
              pattern: "tiktok", 
-              alias :  ['tt','ttdl'], 
+             alias :  ['tt','ttdl'], 
              desc: "Downloads Tiktok Videos Via Url.", 
              category: "downloader", 
-             react: "🎞️",
+             react: "🪄",
              filename: __filename, 
              use: '<add tiktok url.>' 
          }, 
   
          async(Void, citel, text) => { 
-  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
+  if(!text) return await citel.reply(`*මෙ වගෙ ලින්ක් එකක් දෙන්න අයියො💝*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
   let txt = text ? text.split(" ")[0]:''; 
-  if (!/tiktok/.test(txt)) return await citel.reply(`*ලින්ක් එක දෙන්න අයියො🥰*`); 
+  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
   const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
   //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio ) 
-  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel }); 
+  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY KING-X" } , {quoted : citel }); 
   else return await citel.reply("Error While Downloading Your Video")  
  }) 
      //---------------------------------------------------------------------------
@@ -346,10 +346,11 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "audio",
-            alias :['song'],
+            pattern: "song",
+            alias :['audio'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
+            react: "🎶",
             filename: __filename,
             use: '<text>',
         },
@@ -364,7 +365,7 @@ cmd({
             if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`);
             let titleYt = infoYt.videoDetails.title;
             let randomName = getRandom(".mp3");
-            citel.reply('*Downloadig:* '+titleYt)
+            citel.reply('*ඉක්මන් ට දෙන්නම් මැණික💝* '+titleYt)
             const stream = ytdl(anu.url, {
                     filter: (info) => info.audioBitrate == 160 || info.audioBitrate == 128,
                 })
