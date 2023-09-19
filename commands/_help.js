@@ -368,21 +368,19 @@ Secktor.cmd({
         async(Void, citel) => {
             const { commands } = require('../lib');
             const vdf = Config.ownername
-            let str = `*𝙬𝙚𝙡𝙘𝙤𝙢𝙚 ${citel.pushName},*
-   
-🫅 Theme: ${tlang().title} 
-🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
-✨ commands :- ${commands.length}
-⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
-⏰ Time:- ${time}
-📅 Date:- ${date}
-
-🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
- 🫴how can I help you
-
- 🧑‍💻  𝗧𝗵𝗲 𝗰𝗿𝗲𝗮𝘁𝗼𝗿 𝗧𝗵𝗲𝗲𝗸𝘀𝗵𝗮𝗻𝗮
- 
-` + '```'
+            let str = `
+╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
+            str += '```' + `
+┃ ☀╭──────────────      
+┃ ☀│ 👤User: ${citel.pushName}
+┃ ☀│ ❤️Theme: ${tlang().title}
+┃ ☀│ 🎵Prefix: ${prefix}
+┃ ☀│ 🎧Owner: ${vdf}
+┃ ☀│ 🍧Commands: ${commands.length}
+┃ ☀│ 💝Uptime: ${runtime(process.uptime())}
+┃ ☀│ 🆙Mem: ${formatp(os.totalmem() - os.freemem())}
+┃   ╰───────────
+╰━━━━━━━━━━━──⊷\n` + '```'
 for (let i = 0; i < commands.length; i++) 
 {
      if(commands[i].pattern==undefined) continue
