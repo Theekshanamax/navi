@@ -102,7 +102,7 @@ cmd({
          async(Void, citel, text) => { 
  Void.sendMessage(citel.chat, {  
                react: {  
-                   text: "📽️",  
+                   text: "🎥",  
                    key: citel.key  
                }  
            })  
@@ -117,7 +117,7 @@ cmd({
                  if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
                  let titleYt = infoYt.videoDetails.title; 
                  let randomName = getRandom(".mp4"); 
-                 citel.reply('📥 Downloadig Your Video.') 
+                 citel.reply('😘ඉක්මට දෙනො මැණික💝') 
                  const stream = ytdl(urlYt, { 
                          filter: (info) => info.itag == 22 || info.itag == 18, 
                      }) 
@@ -136,6 +136,7 @@ cmd({
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
                           caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`, 
+                          bot: 'KING-X 🇱🇰'
   
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
