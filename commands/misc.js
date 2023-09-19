@@ -14,45 +14,7 @@
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
  const fs = require('fs')
  const axios = require('axios')
-  //---------------------------------------------------------------------------
- cmd({
-    pattern: "setwelcome",
-    desc: "sets welcome message in specific group.",
-    category: "misc",
-    react: "💐",
-},
-async(Void, citel, text,{ isCreator }) => {
-    if (!isCreator) return citel.reply(tlang().owner)
-          let Group = await sck.findOne({ id: citel.chat })
-            if (!Group) {
-                await new sck({ id: citel.chat, welcome: text,events:'true' }).save()
-                return citel.reply('Welcome added added for this group.')
-            } else {
-                await await sck.updateOne({ id: citel.chat }, { welcome:text ,events:'true'})
-                return citel.reply('Welcome updated successfully.')
-                
-            }      
-}
-)
- //---------------------------------------------------------------------------
-cmd({
-    pattern: "setgoodbye",
-    desc: "sets goodbye message in specific group.",
-    category: "misc",
-    react: "👋",
-},
-async(Void, citel, text,{ isCreator }) => {
-    if (!isCreator) return citel.reply(tlang().owner)
-          let Group = await sck.findOne({ id: citel.chat })
-            if (!Group) {
-                await new sck({ id: citel.chat, goodbye: text,events:'true' }).save()
-                return citel.reply('Goodbye added for this group.');
-            } else {
-                await await sck.updateOne({ id: citel.chat }, { goodbye:text,events:'true' })
-                return citel.reply('Goodbye updated successfully.');     
-            }      
-}
-)
+
  //---------------------------------------------------------------------------
  cmd({
              pattern: "attp",
