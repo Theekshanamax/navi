@@ -233,7 +233,8 @@ cmd({
                  if (fileSizeInMegabytes <= dlsize) { 
   
                          let buttonMessage = {  
-                          video: fs.readFileSync(`./${randomName}`),  
+                          video: fs.readFileSync(`./${randomName}`),
+                          jpegThumbnail: log0,
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
                           caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`, 
