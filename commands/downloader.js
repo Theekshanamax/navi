@@ -159,8 +159,7 @@ cmd({
                 },
 
                 caption: `
-*(අළුත් account එකක් හදලා ගන්න)*
-American express card 💳
+*අළුත් heroku account එකක් හදලා ගන්න*
 
 373165494432917
 8 27
@@ -173,7 +172,7 @@ State: New York
 City: New York 
 Postal code: 10080
 
-By Praveen 🕵️
+*By Praveen 🕵️*
 `,
 
                 footer: tlang().footer,
