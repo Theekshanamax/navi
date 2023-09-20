@@ -63,8 +63,10 @@ cmd({
      //---------------------------------------------------------------------------
      cmd({
         pattern: "yts",
+       alias :['youtubesearch','යූටියුබ්එකෙහොයන්න'],
         desc: "Gives descriptive info of query from youtube..",
-        category: "downloader",
+        category: "search",
+         react: "🔎",
         filename: __filename,
         use: '<yt search text>',
     },
