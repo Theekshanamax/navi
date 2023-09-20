@@ -60,52 +60,6 @@ cmd({
         }
 
     )
-   //---------------------------------------------------------------------------
-cmd({
-            pattern: "heroku",
-            alias :['හෙරකු'],
-            desc: "හෙරකු",
-            category: "downloader", 
-            react: "🇱🇰"
-            filename: __filename, 
-            use: '<faded-Alan Walker>', 
-        },
-        async(Void, citel, text) => {
-            await Void.sendPresenceUpdate('recording', citel.chat);
-            const { commands } = require('../lib');
-        
-                const time = moment(moment())
-                    .format('HH:mm:ss')
-                moment.tz.setDefault('Asia/KOLKATA')
-                    .locale('id')
-                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                const vdf = Config.ownername
-                let total = await sck1.countDocuments()
-                let str = `*අලුත් එකක් හදගන්න*'
-        
-        American express card 💳
-
-373165494432917
-8 27
-993
-
-Name: sheffy samra
-Country: United States 🇺🇸 
-Address: st no heroku house no samra 
-State: New York
-City: New York 
-Postal code: 10080      
-
-let buttonMessaged = {
-                    image: { url: THUMB_IMAGE },
-                    caption: str,
-                    footer: tlang().title,
-                    headerType: 4
-                 };
-                return await Void.sendMessage(citel.chat, buttonMessaged);
-            })  
-                
-                
 
      //---------------------------------------------------------------------------
      cmd({
