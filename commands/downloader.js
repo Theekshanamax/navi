@@ -221,8 +221,10 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "mediafire",
+            alias :['md','ගොනු'],
             desc: "Downloads zip from Mediafire.",
             category: "downloader",
+            react: "🗃️",
             filename: __filename,
             use: '<url of mediafire>',
         },
@@ -252,10 +254,11 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "audio",
-            alias :['song'],
+            pattern: "song",
+            alias :['audio','සිංදු'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
+            react: "🎶",
             filename: __filename,
             use: '<text>',
         },
@@ -317,8 +320,10 @@ cmd({
 
 cmd({
             pattern: "ytmp4",
+            alias :['mp4','යුටියුබ්4'],
             desc: "Downloads video from youtube.",
             category: "downloader",
+            react: "📹",
             filename: __filename,
             use: '<yt video url>',
         },
@@ -385,8 +390,10 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "ytmp3",
+       alias :['mp3','යුටියුබ්3'],
         desc: "Downloads audio by yt link.",
         category: "downloader",
+       react: "🎼",
         use: '<yt video url>',
     },
     async(Void, citel, text) => {
@@ -463,6 +470,7 @@ cmd({
         pattern: "ytdoc",
         desc: "Downloads audio by yt link as document.",
         category: "downloader",
+       react: "📇",
         use: '<ytdoc video url>',
     },
     async(Void, citel, text) => {
