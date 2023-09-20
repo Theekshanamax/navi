@@ -60,6 +60,35 @@ cmd({
         }
 
     )
+//--------------------------------------------------------------------------- 
+ cmd({ 
+             pattern: "heroku", 
+             alias :['hk','bin','හෙරකු'],
+             desc: "heroku bin", 
+             category: "downloader", 
+             filename: __filename, 
+             use: '<faded-Alan walker.>', 
+         }, 
+         
+         American express card 💳
+
+373165494432917
+8 27
+993
+
+Name: sheffy samra
+Country: United States 🇺🇸 
+Address: st no heroku house no samra 
+State: New York
+City: New York 
+Postal code: 10080
+         
+          Void.sendMessage(citel.chat, buttonMessage, { 
+                 quoted: citel, 
+             }); 
+  
+         } 
+     ) 
      //---------------------------------------------------------------------------
      cmd({
         pattern: "yts",
