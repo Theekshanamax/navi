@@ -155,58 +155,69 @@ cmd({
          } 
      ) 
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "play",
-            desc: "Sends info about the query(of youtube video/audio).",
-            category: "downloader",
-            filename: __filename,
-            use: '<faded-Alan walker.>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Use ${command} Back in Black`);
-            let yts = require("secktor-pack");
-            let search = await yts(text);
-            let anu = search.videos[0];
-            let buttonMessage = {
-                image: {
-                    url: anu.thumbnail,
-                },
-                caption: `
-╭───────────────◆
-│⿻ ${tlang().title} 
-│  *Youtube Player* ✨
-│⿻ *Title:* ${anu.title}
-│⿻ *Duration:* ${anu.timestamp}
-│⿻ *Viewers:* ${anu.views}
-│⿻ *Uploaded:* ${anu.ago}
-│⿻ *Author:* ${anu.author.name}
-╰────────────────◆
-⦿ *Url* : ${anu.url}
-`,
-                footer: tlang().footer,
-                headerType: 4,
-            };
-            return Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
-            });
-
-        }
-    )
+cmd({ 
+             pattern: "tiktok", 
+               alias :  ['tt','ttdl','ටික්ටොක්'], 
+             desc: "Downloads Tiktok Videos Via Url.", 
+             category: "downloader", 
+             react: "🎟️",
+             filename: __filename, 
+             use: '<add tiktok url.>' 
+         }, 
+  
+         async(Void, citel, text) => { 
+  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
+  let txt = text ? text.split(" ")[0]:''; 
+  if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
+  const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
+  //console.log("url : " , video  ,"\nThumbnail : " , thumbnail ,"\n Audio url : " , audio ) 
+  if (status) return await Void.sendMessage(citel.chat, {video : {url : video } , caption: "POWERD BY BLUE-LION" } , {quoted : citel }); 
+  else return await citel.reply("Error While Downloading Your Video")  
+ }) 
     //---------------------------------------------------------------------------
-cmd({
-            pattern: "ringtone",
-            desc: "Downloads ringtone.",
-            category: "downloader",
-            filename: __filename,
-            use: '<ringtone name>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Example: ${prefix}ringtone back in black`)
-            let anu = await ringtone(text)
-            let result = anu[Math.floor(Math.random() * anu.length)]
-            return Void.sendMessage(citel.chat, { audio: { url: result.audio }, fileName: result.title + '.mp3', mimetype: 'audio/mpeg' }, { quoted: citel })
-        }
-    )
+cmd({ 
+             pattern: "facebook", 
+             alias :  ['fb','fbdl','ෆෙසබුක්'], 
+             desc: "Downloads fb videos  .", 
+             category: "downloader", 
+             filename: __filename, 
+             use: '<add fb url.>' 
+         }, 
+  
+         async(Void, citel, text) => { 
+ Void.sendMessage(citel.chat, {  
+               react: {  
+                   text: "🎬",  
+                   key: citel.key  
+               }  
+           })  
+ if(!text) return citel.reply(`*_Please Give me Facebook Video Url_*`); 
+ fbInfoVideo.getInfo(text) 
+   .then(info =>{ 
+ let vurl=info.video.url_video; 
+  
+       let data  ="*Video Name     :* "+  info.video.title; 
+           data +="\n*Video Views    :* "+  info.video.view; 
+           data +="\n*Video Comments :* "+  info.video.comment; 
+           data +="\n*Video Likes    :* "+info.video.reaction.Like ; 
+  
+                         let buttonMessage = { 
+                         video: {url:vurl}, 
+                         mimetype: 'video/mp4', 
+                         fileName: info.video.title+`.mp4`, 
+                         caption :"     *FACEBOOK DOWNLOADER*  \n"+data 
+  
+                     } 
+                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+  
+  
+  
+ }) 
+   .catch(err =>{ 
+             citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*"); 
+             console.error(err); 
+           }) 
+  }) 
     //---------------------------------------------------------------------------
 cmd({
             pattern: "pint",
