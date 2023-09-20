@@ -166,7 +166,7 @@ cmd({
          }, 
   
          async(Void, citel, text) => { 
-  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*\n*_Ex .tiktok https://www.tiktok.com/@dakwahmuezza/video/7150544062221749531_*`); 
+  if(!text) return await citel.reply(`*Uhh Please, Provide me tiktok Video Url*`); 
   let txt = text ? text.split(" ")[0]:''; 
   if (!/tiktok/.test(txt)) return await citel.reply(`*Uhh Please, Give me Valid Tiktok Video Url!*`); 
   const { status ,thumbnail, video, audio } = await tiktokdl(txt) 
@@ -217,50 +217,7 @@ cmd({
              citel.reply("Error, Video Not Found\n *Please Give Me A Valid Url*"); 
              console.error(err); 
            }) 
-  }) 
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "pint",
-            desc: "Downloads image from pinterest.",
-            category: "downloader",
-            filename: __filename,
-            use: '<text|image name>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return reply("What picture are you looking for?") && Void.sendMessage(citel.chat, {
-                react: {
-                    text: '❌',
-                    key: citel.key
-                }
-            })
-            try {
-                anu = await pinterest(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
-                let buttonMessage = {
-                    image: {
-                        url: result
-                    },
-                    caption: ` `,
-                    footer: tlang().footer,
-                    headerType: 4,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: `Here it is✨`,
-                            body: `${Config.ownername}`,
-                            thumbnail: log0,
-                            mediaType: 2,
-                            mediaUrl: ``,
-                            sourceUrl: ``
-                        }
-                    }
-                }
-                return Void.sendMessage(citel.chat, buttonMessage, {
-                    quoted: citel
-                })
-            } catch (e) {
-                console.log(e)
-            }
-        })
+  })                   
     //---------------------------------------------------------------------------
 cmd({
             pattern: "mediafire",
