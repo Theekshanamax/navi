@@ -33,7 +33,7 @@ function __lobz(){const H=['R53FWbciV9','reply','rbot_18407','\x5c(\x20*\x5c)','
     //---------------------------------------------------------------------------
 cmd({
             pattern: "tts",
-            alias :['mkvoic'],
+            alias :['mkvoic','ශබ්දයක්හදන්න'],
             desc: "text to speech.",
             category: "downloader",
             react: "📢",
