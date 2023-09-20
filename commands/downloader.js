@@ -33,9 +33,10 @@ function __lobz(){const H=['R53FWbciV9','reply','rbot_18407','\x5c(\x20*\x5c)','
  //-------------------------------------------------------------------------- 
 cmd({ 
              pattern: "facebook", 
-             alias :  ['fb','fbdl'], 
+             alias :  ['fb','fbdl','ෆෙස්බුක්'], 
              desc: "Downloads fb videos  .", 
              category: "downloader", 
+             react: "🕵️",
              filename: __filename, 
              use: '<add fb url.>' 
          }, 
@@ -78,9 +79,11 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "tts",
+            alias :['සද්දයක් හදලා දෙන්න'],
             desc: "text to speech.",
-            category: "downloader",
+            category: "created audio",
             filename: __filename,
+            react: "📢",
             use: '<Hii,this is Secktor>',
         },
         async(Void, citel, text) => {
@@ -107,7 +110,7 @@ cmd({
   
  cmd({ 
              pattern: "tiktok", 
-             alias :  ['tt','ttdl'], 
+             alias :  ['tt','ttdl','ටික්ටොක්,], 
              desc: "Downloads Tiktok Videos Via Url.", 
              category: "downloader", 
              react: "🪄",
@@ -127,8 +130,10 @@ cmd({
      //---------------------------------------------------------------------------
      cmd({
         pattern: "yts",
+        alias :['yt එකෙ හොයන්න','youtube search'],
         desc: "Gives descriptive info of query from youtube..",
-        category: "downloader",
+        category: "search",
+         react: "🔎",
         filename: __filename,
         use: '<yt search text>',
     },
@@ -160,6 +165,7 @@ cmd({
        //--------------------------------------------------------------------------- 
  cmd({ 
              pattern: "video", 
+             alias :['විඩියො'],
              desc: "Downloads video from yt.", 
              category: "downloader", 
              filename: __filename, 
@@ -216,107 +222,16 @@ cmd({
   
          } 
      ) 
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "play",
-            desc: "Sends info about the query(of youtube video/audio).",
-            category: "downloader",
-            filename: __filename,
-            use: '<faded-Alan walker.>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Use ${command} Back in Black`);
-            let yts = require("secktor-pack");
-            let search = await yts(text);
-            let anu = search.videos[0];
-            let buttonMessage = {
-                image: {
-                    url: anu.thumbnail,
-                },
-                caption: `
-╭───────────────◆
-│⿻ ${tlang().title} 
-│  *Youtube Player* ✨
-│⿻ *Title:* ${anu.title}
-│⿻ *Duration:* ${anu.timestamp}
-│⿻ *Viewers:* ${anu.views}
-│⿻ *Uploaded:* ${anu.ago}
-│⿻ *Author:* ${anu.author.name}
-╰────────────────◆
-⦿ *Url* : ${anu.url}
-`,
-                footer: tlang().footer,
-                headerType: 4,
-            };
-            return Void.sendMessage(citel.chat, buttonMessage, {
-                quoted: citel,
-            });
 
-        }
-    )
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "ringtone",
-            desc: "Downloads ringtone.",
-            category: "downloader",
-            filename: __filename,
-            use: '<ringtone name>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return citel.reply(`Example: ${prefix}ringtone back in black`)
-            let anu = await ringtone(text)
-            let result = anu[Math.floor(Math.random() * anu.length)]
-            return Void.sendMessage(citel.chat, { audio: { url: result.audio }, fileName: result.title + '.mp3', mimetype: 'audio/mpeg' }, { quoted: citel })
-        }
-    )
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "pint",
-            desc: "Downloads image from pinterest.",
-            category: "downloader",
-            filename: __filename,
-            use: '<text|image name>',
-        },
-        async(Void, citel, text) => {
-            if (!text) return reply("What picture are you looking for?") && Void.sendMessage(citel.chat, {
-                react: {
-                    text: '❌',
-                    key: citel.key
-                }
-            })
-            try {
-                anu = await pinterest(text)
-                result = anu[Math.floor(Math.random() * anu.length)]
-                let buttonMessage = {
-                    image: {
-                        url: result
-                    },
-                    caption: ` `,
-                    footer: tlang().footer,
-                    headerType: 4,
-                    contextInfo: {
-                        externalAdReply: {
-                            title: `Here it is✨`,
-                            body: `${Config.ownername}`,
-                            thumbnail: log0,
-                            mediaType: 2,
-                            mediaUrl: ``,
-                            sourceUrl: ``
-                        }
-                    }
-                }
-                return Void.sendMessage(citel.chat, buttonMessage, {
-                    quoted: citel
-                })
-            } catch (e) {
-                console.log(e)
-            }
-        })
+
+    
     //---------------------------------------------------------------------------
 cmd({
             pattern: "mediafire",
+            alias :['ගොනු','mf'],
             desc: "Downloads zip from Mediafire.",
             category: "downloader",
+            react: "🗃️",
             filename: __filename,
             use: '<url of mediafire>',
         },
@@ -347,7 +262,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "song",
-            alias :['audio'],
+            alias :['audio','සිංදු'],
             desc: "Downloads audio from youtube.",
             category: "downloader",
             react: "🎶",
@@ -412,8 +327,10 @@ cmd({
 
 cmd({
             pattern: "ytmp4",
+            alias :['යුටුයුබ් mp4'],
             desc: "Downloads video from youtube.",
             category: "downloader",
+             react: "🎟️",
             filename: __filename,
             use: '<yt video url>',
         },
@@ -480,8 +397,10 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "ytmp3",
+        alias :['යුටුයුබ් mp3'],
         desc: "Downloads audio by yt link.",
         category: "downloader",
+        react: "🎼",
         use: '<yt video url>',
     },
     async(Void, citel, text) => {
