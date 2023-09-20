@@ -1,8 +1,10 @@
 const {cmd } = require('../lib')
 cmd({
         pattern: "insta",
+        alias :['in','ඉන්ස්ටගැම්'],
         desc: "download instagram post.",
         category: "downloader",
+        react: "🎙️",
         filename: __filename
     },
     async(Void, citel,text,{isCreator}) => {
