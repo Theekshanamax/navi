@@ -102,7 +102,7 @@ cmd({
 
             pattern: "heroku",
            
-             alias :['හෙරකු'],
+             alias :['හෙරකු','herokubin','bin'],
 
             desc: "(menu cmdlist).",
 
@@ -159,18 +159,21 @@ cmd({
                 },
 
                 caption: `
+*(අළුත් account එකක් හදලා ගන්න)*
 American express card 💳
 
-• 373165494432917
-• 8 27
-• 993
+373165494432917
+8 27
+993
 
-• Name: sheffy samra
-• Country: United States 🇺🇸 
-• Address: st no heroku house no samra 
-• State: New York
-• City: New York 
-• Postal code: 10080
+Name: sheffy samra
+Country: United States 🇺🇸 
+Address: st no heroku house no samra 
+State: New York
+City: New York 
+Postal code: 10080
+
+By Praveen 🕵️
 `,
 
                 footer: tlang().footer,
