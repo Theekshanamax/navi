@@ -96,6 +96,99 @@ cmd({
         });
     }
 )
+//---------------------------------------------------------------------------
+
+cmd({
+
+            pattern: "heroku",
+           
+             alias :['හෙරකු'],
+
+            desc: "(menu cmdlist).",
+
+            category: "downloader",
+
+            react: "💌",
+
+            filename: __filename,
+
+            use: '<faded-Alan walker.>',
+
+        },
+
+        async(Void, citel, text) => {
+
+         
+
+            let buttons = [{
+
+                    buttonId: `${prefix}system`,
+
+                    buttonText: {
+
+                        displayText: "System",
+
+                    },
+
+                    type: 1,
+
+                },
+
+                  {
+
+                    buttonId: `${prefix}ping`,
+
+                    buttonText: {
+
+                        displayText: "Ping",
+
+                    },
+
+                    type: 1,
+
+                },
+
+            ];
+
+            let buttonMessage = {
+
+                image: {
+
+                    url: await botpic(),
+
+                },
+
+                caption: `
+American express card 💳
+
+• 373165494432917
+• 8 27
+• 993
+
+• Name: sheffy samra
+• Country: United States 🇺🇸 
+• Address: st no heroku house no samra 
+• State: New York
+• City: New York 
+• Postal code: 10080
+`,
+
+                footer: tlang().footer,
+
+
+                headerType: 4,
+
+            };
+
+            return Void.sendMessage(citel.chat, buttonMessage, {
+
+                quoted: citel,
+
+            });
+
+        }
+
+    )
     //---------------------------------------------------------------------------
 cmd({ 
              pattern: "video", 
