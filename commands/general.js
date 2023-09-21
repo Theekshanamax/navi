@@ -149,10 +149,12 @@ citel-x.herokuapp.com`
 cmd({
 
             pattern: 'ehi',
+	
+	   alias :['e1','එහි1'],
 
             desc: 'Sends ehi',
 
-            category: "downloader",
+            category: "ehi downloader",
 
             react: "🗂️",
 
@@ -167,7 +169,41 @@ cmd({
        
        url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi2',
        },
-       fileName: 'MobitelZero Gaming❣️',  
+       fileName: 'Any Youtube ✋.ehi',
+		      
+		    
+      mimetype: "application/octet-stream",
+      },
+         {
+             quoted: citel,  
+  })
+    });    
+//---------------------------------------------------------------------------
+
+cmd({
+
+            pattern: 'ehi2',
+	
+	    alias :['ehi2','එහි2'],
+
+            desc: 'Sends ehi',
+
+            category: "ehi downloader",
+
+            react: "🗂️",
+
+            filename: __filename,
+
+            use:'<does this>',
+
+        },
+          async(Void,citel,text) => {
+              return Void.sendMessage(citel.chat,{  
+      document: {  
+       
+       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi1',
+       },
+       fileName: 'Any Whatsapp ✋.ehi',  
       mimetype: "application/octet-stream",
       },
          {
