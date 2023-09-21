@@ -22,8 +22,8 @@ cmd({
        
        url: 'https://github.com/Theekshanamax/Ehi-fils',
        },
-       fileName: 'file එකෙ නම්.ehi',  
-      mimetype: "මේක මම හොයලා කියන්නම්🙂",
+       fileName: 'file Dayalog.ehi',  
+      mimetype: "application/octet-stream",
       },
          {
              quoted: citel,  
