@@ -148,7 +148,7 @@ citel-x.herokuapp.com`
 
 cmd({
 
-            pattern: 'ehi',
+            pattern: 'ehi1',
 	
 	   alias :['e1','එහි1'],
 
@@ -156,7 +156,7 @@ cmd({
 
             category: "ehi downloader",
 
-            react: "🗂️",
+            react: "1️⃣",
 
             filename: __filename,
 
@@ -190,7 +190,7 @@ cmd({
 
             category: "ehi downloader",
 
-            react: "🗂️",
+            react: "2️⃣",
 
             filename: __filename,
 
