@@ -17,10 +17,8 @@ const fetch = require('node-fetch')
 
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "movie",
-            alias :['imdb','සිනමා'],
+            pattern: "imdb",
             category: "search",
-           react: "🎬",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
             filename: __filename,
@@ -60,12 +58,9 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-cmd(//---------------------------------------------------------------------------
 cmd({
             pattern: "weather",
-           alias :['කාලගුනය'],
             category: "search",
-            react: "🌤️",
             desc: "Sends weather info about asked place.",
             use: '<location>',
             filename: __filename,
@@ -76,17 +71,17 @@ cmd({
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
             let textw = "";
-            textw += `🌦️ ━━━ *කාලගුණ නිවේදනය* ━━━ 🌦️ ${text}\n\n\n`;
-            textw += `⛈️ *දැන් තත්වය:-* ${wdata.data.weather[0].main}\n\n`;
-            textw += `📃 *විස්තරය:-* ${wdata.data.weather[0].description}\n\n`;
-            textw += `☀️ *සාමාන්‍ය උෂ්ණත්වය:-* ${wdata.data.main.temp}\n\n`;
-            textw += `🔥 *දැනෙන්නේ:-* ${wdata.data.main.feels_like}\n\n`;
-            textw += `🌫️ *පීඩනය:-* ${wdata.data.main.pressure}\n\n`;
-            textw += `🪐 *ආර්ද්‍රතාවය:-* ${wdata.data.main.humidity}\n\n`;
-            textw += `🌪️ *සුළගේ වේගය:-* ${wdata.data.wind.speed}\n\n`;
-            textw += `🌐 *අක්ෂාංශ:-* ${wdata.data.coord.lat}\n\n`;
-            textw += `🌏 *දේශාංශ:-* ${wdata.data.coord.lon}\n\n`;
-            textw += `🌍 *රට:-* ${wdata.data.sys.country}\n\n`;
+            textw += `*🌟Weather of  ${text}*\n\n`;
+            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`;
+            textw += `*Description:-* ${wdata.data.weather[0].description}\n`;
+            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`;
+            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`;
+            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`;
+            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`;
+            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`;
+            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`;
+            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`;
+            textw += `*Country:-* ${wdata.data.sys.country}\n`;
 
             Void.sendMessage(
                 citel.chat, {
@@ -101,9 +96,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "horo",
-        alias :['කෙන්දරෙ'],
             category: "search",
-            react: "🤵",
             desc: "Gives horoscope info of user.",
             use: '<sign>\n:Example: horo libra',
             filename: __filename,
@@ -140,9 +133,8 @@ cmd({
     //---------------------------------------------------------------------------
     cmd({
         pattern: "google",
-        alias :['search','gsearch','ගුගල්'],
+        alias :['search','gsearch'],
         category: "search",
-        react: "🌍",
         desc: "Sends info of given query from Google Search.",
         use: '<text>',
         filename: __filename,
@@ -164,10 +156,8 @@ cmd({
 )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "img",
-            alias :['image','රූප'],
+            pattern: "image",
             category: "search",
-           react: "🏞️",
             desc: "Searches Image on Google",
             use: '<text>',
             filename: __filename,
@@ -196,35 +186,10 @@ cmd({
             }
         }
     )
-//---------------------------------------------------------------------------
- cmd({  
-      pattern: "nasa",  
-      alias: ['news/nasa','නාසා'],
-      desc: "",  
-      category: "news",  
-      react: "🇱🇰",
-      use: '.hirunews',  
-      filename: __filename  
-  },  
-  async(Void, citel) => {  
-  try{  
-  const nasa = await fetchJson(`https://darkapi--technicalhacke4.repl.co/nasanews`);  
-  
-            const images = `${nasa.result.image}`  
-             const title = `${nasa.result.title}` 
-             const news = `${nasa.result.desc}`  
-  
-  await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
-  }  
-  catch(e){  
-  console.log(e)  
-  }})
-
-//---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
 cmd({
             pattern: "couplepp",
             category: "search",
-           react: "👫",
             desc: "Sends two couples pics.",
             filename: __filename,
         },
@@ -235,31 +200,7 @@ cmd({
             Void.sendMessage(citel.chat, { image: { url: random.female }, caption: `Couple Female` }, { quoted: citel })
         }
     )
-//--------------------------------------------------------------------------
-cmd({ 
-     pattern: "hirunews", 
-     alias: ["hiru","news/hiru","ප්‍රවෘත්ති"], 
-     react: "🗞️", 
-     desc: "", 
-     category: "news", 
-     use: '.hirunews', 
-     filename: __filename 
- }, 
- async(Void, citel) => { 
- try{ 
- const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
-           const images = `${hirunews.image}` 
-            const title = `${hirunews.title}` 
-            const date = `${hirunews.time}` 
-            const news = `${hirunews.desc}` 
-  
- await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n${ title }\n\n ${ news }\n\n${date}`}, { quoted: citel }) 
- } 
- catch(e){ 
- console.log(e) 
- }})
- 
-//---------------------------------------------------------------------------
+    //---------------------------------------------------------------------------
 cmd({
         pattern: "iswa",
         category: "search",
