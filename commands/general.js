@@ -167,8 +167,8 @@ cmd({
        
        url: 'https://github.com/Theekshanamax/Ehi-fils',
        },
-       fileName: 'file එකෙ නම්.ehi',  
-      mimetype: "මේක මම හොයලා කියන්නම්🙂",
+       fileName: 'MobitelZero Gaming❣️,Mobitel Zero ❣️,Dialog Zoom ✋',  
+      mimetype: "application/octet-stream",
       },
          {
              quoted: citel,  
