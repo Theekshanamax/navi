@@ -17,8 +17,10 @@ const fetch = require('node-fetch')
 
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "imdb",
-            category: "search",
+            pattern: "movie",
+            alias :['imb','imdb','සිනමා'],
+            category: "search"
+            react: "🎬",
             desc: "Sends image of asked Movie/Series.",
             use: '<text>',
             filename: __filename,
