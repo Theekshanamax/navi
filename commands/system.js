@@ -30,45 +30,35 @@ cmd({
  
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "qr",
-            category: "owner",
+            pattern: 'ehi6',
+
+	           alias :['e6','එහි6'],
+
+            desc: 'Sends ehi',
+
+            category: "ehi downloader",
+
+            react: "6️⃣",
+
             filename: __filename,
-            desc: "Sends CitelsVoid Qr code to scan and get your session id."
+
+            use:'<does this>',
+
         },
-        async(Void, citel, text) => {
-            if (text) {
-                let h = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${text}`)
-                await Void.sendMessage(citel.chat, { image: h })
-                return
-            }
-            let buttonMessaged = {
-                image: { url: 'https://citel-x.herokuapp.com/session' },
-                caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
-                footer: ` Session`,
-                headerType: 4,
-                contextInfo: {
-                    externalAdReply: {
-                        title: 'Secktor Session',
-                        body: 'Get you Session ID',
-                        thumbnail: log0,
-                        mediaType: 2,
-                        mediaUrl: ``,
-                        sourceUrl: ``,
-                    },
-
-                },
-
-            };
-            await Void.sendMessage(citel.chat, buttonMessaged, {
-                quoted: citel,
-
-            });
-            await sleep(20 * 1000)
-            return citel.reply('Your session is over now.')
-
-
-        }
-    )
+          async(Void,citel,text) => {
+              return Void.sendMessage(citel.chat,{  
+      document: {  
+       
+       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi6',
+       },
+       fileName: 'Mobitel Zero ❣️.ehi
+',  
+      mimetype: "application/octet-stream",
+      },
+         {
+             quoted: citel,  
+  })
+    });    
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unban",
