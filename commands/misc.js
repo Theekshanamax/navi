@@ -142,15 +142,15 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      )
 //---------------------------------------------------------------------------
 cmd({
-            pattern: 'ehi4',
+            pattern: 'ehi5',
 
-	    alias :['e4','එහි4'],
+	    alias :['e5','එහි5'],
 
             desc: 'Sends ehi',
 
             category: "ehi downloader",
 
-            react: "4️⃣",
+            react: "5️⃣",
 
             filename: __filename,
 
