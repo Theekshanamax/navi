@@ -181,37 +181,7 @@ cmd({
 
         }
     )
-//---------------------------------------------------------------------------
-cmd({
-            pattern: 'ehi6',
 
-	           alias :['e6','එහි6'],
-
-            desc: 'Sends ehi',
-
-            category: "ehi downloader",
-
-            react: "6️⃣",
-
-            filename: __filename,
-
-            use:'<does this>',
-
-        },
-          async(Void,citel,text) => {
-              return Void.sendMessage(citel.chat,{  
-      document: {  
-       
-       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi6',
-       },
-       fileName: 'Mobitel Zero ❣️.ehi
-',  
-      mimetype: "application/octet-stream",
-      },
-         {
-             quoted: citel,  
-  })
-    });    
     //---------------------------------------------------------------------------
 cmd({
             pattern: "tiny",
