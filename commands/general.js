@@ -242,39 +242,7 @@ cmd({
              quoted: citel,  
   })
     });
-//---------------------------------------------------------------------------
 
-cmd({
-
-            pattern: 'ehi4',
-	
-	   alias :['e4','එහි4'],
-
-            desc: 'Sends ehi',
-
-            category: "ehi downloader",
-
-            react: "4️⃣",
-
-            filename: __filename,
-
-            use:'<does this>',
-
-        },
-          async(Void,citel,text) => {
-              return Void.sendMessage(citel.chat,{  
-      document: {  
-       
-       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi4',
-       },
-       fileName: 'Dialog Zoom ✋.ehi',
-		      
-		    
-      mimetype: "application/octet-stream",
-      },
-         {
-             quoted: citel,  
-  })
 //---------------------------------------------------------------------------
 cmd({
         pattern: "status",
