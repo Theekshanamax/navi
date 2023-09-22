@@ -135,6 +135,8 @@ cmd({
 cmd({
 
             pattern: 'ehi6',
+ 
+            alias :['e6','එහි6'],
 
             desc: 'Sends ehi',
 
