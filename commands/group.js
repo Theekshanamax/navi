@@ -143,7 +143,7 @@ cmd({
 
             desc: 'Sends ehi',
 
-            category: "ehidownloader",
+            category: "ehi downloader",
 
             react: "5️⃣",
 
