@@ -184,7 +184,7 @@ cmd({
 
             pattern: 'ehi2',
 	
-	    alias :['ehi2','එහි2'],
+	   alias :['e2','එහි2'],
 
             desc: 'Sends ehi',
 
@@ -201,9 +201,140 @@ cmd({
               return Void.sendMessage(citel.chat,{  
       document: {  
        
+       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi3',
+       },
+       fileName: 'Any Facebook ✋.ehi',  
+      mimetype: "application/octet-stream",
+      },
+         {
+             quoted: citel,  
+  })
+    });    
+//---------------------------------------------------------------------------
+
+cmd({
+
+            pattern: 'ehi3',
+	
+	    alias :['e3','එහි3'],
+
+            desc: 'Sends ehi',
+
+            category: "ehi downloader",
+
+            react: "3️⃣",
+
+            filename: __filename,
+
+            use:'<does this>',
+
+        },
+          async(Void,citel,text) => {
+              return Void.sendMessage(citel.chat,{  
+      document: {  
+       
        url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi1',
        },
        fileName: 'Any Whatsapp ✋.ehi',  
+      mimetype: "application/octet-stream",
+      },
+         {
+             quoted: citel,  
+  })
+    });   
+//---------------------------------------------------------------------------
+
+cmd({
+
+            pattern: 'ehi4',
+
+	    alias :['e4','එහි4'],
+
+            desc: 'Sends ehi',
+
+            category: "ehi downloader",
+
+            react: "4️⃣",
+
+            filename: __filename,
+
+            use:'<does this>',
+
+        },
+          async(Void,citel,text) => {
+              return Void.sendMessage(citel.chat,{  
+      document: {  
+       
+       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi4',
+       },
+       fileName: 'Dialog Zoom ✋.ehi',  
+      mimetype: "application/octet-stream",
+      },
+         {
+             quoted: citel,  
+  })
+    });   
+//---------------------------------------------------------------------------
+
+cmd({
+
+            pattern: 'ehi5',
+
+	    alias :['e5','එහි5'],
+
+            desc: 'Sends ehi',
+
+            category: "ehi downloader",
+
+            react: "5️⃣",
+
+            filename: __filename,
+
+            use:'<does this>',
+
+        },
+          async(Void,citel,text) => {
+              return Void.sendMessage(citel.chat,{  
+      document: {  
+       
+       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi5',
+       },
+       fileName: 'MobitelZero Gaming❣️.ehi
+Go to file
+',  
+      mimetype: "application/octet-stream",
+      },
+         {
+             quoted: citel,  
+  })
+    });    
+//---------------------------------------------------------------------------
+
+cmd({
+
+            pattern: 'ehi6',
+
+	    alias :['e6','එහි6'],
+
+            desc: 'Sends ehi',
+
+            category: "ehi downloader",
+
+            react: "6️⃣",
+
+            filename: __filename,
+
+            use:'<does this>',
+
+        },
+          async(Void,citel,text) => {
+              return Void.sendMessage(citel.chat,{  
+      document: {  
+       
+       url: 'https://github.com/Theekshanamax/Ehi-fils/tree/main/ehi6',
+       },
+       fileName: 'Mobitel Zero ❣️.ehi
+',  
       mimetype: "application/octet-stream",
       },
          {
