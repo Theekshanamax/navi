@@ -15,8 +15,10 @@ const { tlang, Config, prefix,cmd } = require('../lib')
     //---------------------------------------------------------------------------
 cmd({
             pattern: "update",
+      alias :['upt'],
             desc: "Shows repo\'s refreshed commits.",
-            category: "misc",
+            category: "My owner",
+          react: "♻️",
             filename: __filename
         },
         async(Void, citel, text,{ isCreator }) => {
