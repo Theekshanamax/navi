@@ -14,7 +14,7 @@ const { plugins,plugindb, remove, isUrl,cmd } = require('../lib')
 //---------------------------------------------------------------------------
 cmd({
         pattern: "plugins",
-           alias : ['ps'],
+           alias : ['pls'],
         alias :['plist'],
         category: "My owner",
          react: "📇",
