@@ -17,7 +17,7 @@ cmd({
             pattern: "update",
       alias :['upt'],
             desc: "Shows repo\'s refreshed commits.",
-            category: "My owner",
+            category: "owner",
           react: "♻️",
             filename: __filename
         },
