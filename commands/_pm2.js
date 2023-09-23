@@ -13,8 +13,10 @@
 const {cmd,tlang,sleep} = require('../lib')
 cmd({
         pattern: "restart",
+        alias :['rt','රිස්ටාට්'],
         desc: "To restart bot",
-        category: "tools",
+        category: "My owner",
+        react: "🔁",
         filename: __filename
     },
     async(Void, citel,text,{ isCreator }) => {
