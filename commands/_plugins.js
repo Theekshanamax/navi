@@ -56,7 +56,7 @@ cmd({
 
 //---------------------------------------------------------------------------
 cmd({
-        pattern: "install",
+      
        
         desc: "Installs external modules..",
         filename: __filename
