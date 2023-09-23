@@ -15,7 +15,9 @@ const util = require('util')
 //---------------------------------------------------------------------------
 cmd({
             pattern: "addnote",
-            category: "owner",
+           alias :['nt'],
+            category: "My owner",
+           react: "🔖",
             desc: "Adds a note on db.",
             filename: __filename
         },
@@ -30,7 +32,8 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unban",
-            category: "misc",
+            category: "My owner",
+         react: "❇️",
             filename: __filename,
             desc: "Unbans banned user (from using bot)."
         },
@@ -61,8 +64,9 @@ cmd({
     //---------------------------------------------------------------------------
     cmd({
         pattern: "url",
-        alias : ['createurl'],
-        category: "misc",
+        alias : ['createurl','ලින්ක්'],
+        category: "created",
+     react: "🔗",
         filename: __filename,
         desc: "image to url."
     },
@@ -79,9 +83,10 @@ cmd({
     //---------------------------------------------------------------------------
 //---------------------------------------------------------------------------
 cmd({
-    pattern: "trt",
-    alias :['translate'],
-    category: "misc",
+    pattern: "translate",
+    alias :['trt','පරිවර්තනයකරන්න'],
+    category: "all commnd",
+     react: "💡",
     filename: __filename,
     desc: "Translate\'s given text in desird language."
 },
@@ -97,8 +102,9 @@ async(Void, citel, text) => {
 )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "shell",
-            category: "owner",
+          pattern: "shell",
+            category: "My owner",
+            react: "🤘",
             filename: __filename,
             desc: "Runs command in Heroku(server) shell."
         },
@@ -116,7 +122,8 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "eval",
-            category: "owner",
+            category: "My owner",
+            react: "👏",
             filename: __filename,
             desc: "Runs js code on node server."
         },
@@ -135,7 +142,8 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "delnote",
-            category: "owner",
+            category: "My owner",
+              react: "🙌",
             filename: __filename,
             desc: "Deletes note from db."
         },
@@ -150,7 +158,8 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "delallnotes",
-            category: "owner",
+            category: "My owner",
+           react: "✌️",
             filename: __filename,
             desc: "Deletes all notes from db."
         },
@@ -165,7 +174,8 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "ban",
-            category: "owner",
+            category: "My owner",
+           react: "💲",
             filename: __filename,
             desc: "Bans user from using bot."
         },
@@ -196,6 +206,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "alive",
+            alias :['ඔයාඉන්නවද','Honlin],
             category: "general",
             filename: __filename,
             desc: "is bot alive??"
@@ -204,17 +215,17 @@ cmd({
             let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by SamPandey001.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-_This is  ${tlang().title}._
 ${alivemessage}
 
-*Version:-* _0.0.7_
+🤴 *hello I'm king-x whatsApp bot*  🤴
+     *🫸 how can I help you brother 🫷*
+     
 *Uptime:-* _${runtime(process.uptime())}_
 *Owner:-* _${Config.ownername}_
-*Branch:-* _${Config.BRANCH}_
 
-_Type ${prefix}menu for my command list._
+_👉 ප්‍රදාන [මෙනු]එක නැරඹීමට සිංහල හො ඉංග්‍රීසි භාෂාව උපයෝගි කරගෙන [.මෙනු/.menu] යොදාගන්නා._
 
-_Powered by ${Config.ownername}_
+_🤭Powered by ${Config.ownername}_
 `;
             let aliveMessage = {
                 image: {
@@ -233,8 +244,9 @@ _Powered by ${Config.ownername}_
     //---------------------------------------------------------------------------
 cmd({
         pattern: "allnotes",
-        category: "owner",
+        category: "My owner",
         filename: __filename,
+        react: "👊",
         desc: "Shows list of all notes."
     },
     async(Void, citel, text,{ isCreator }) => {
