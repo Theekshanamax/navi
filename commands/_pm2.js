@@ -15,7 +15,7 @@ cmd({
         pattern: "restart",
         alias :['rt','රිස්ටාට්'],
         desc: "To restart bot",
-        category: "My owner",
+        category: "owner",
         react: "🔁",
         filename: __filename
     },
