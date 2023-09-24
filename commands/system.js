@@ -27,52 +27,10 @@ cmd({
 
         }
     )
- 
-    //---------------------------------------------------------------------------
-cmd({
-            pattern: "qr",
-            category: "owner",
-            filename: __filename,
-            desc: "Sends CitelsVoid Qr code to scan and get your session id."
-        },
-        async(Void, citel, text) => {
-            if (text) {
-                let h = await getBuffer(`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${text}`)
-                await Void.sendMessage(citel.chat, { image: h })
-                return
-            }
-            let buttonMessaged = {
-                image: { url: 'https://citel-x.herokuapp.com/session' },
-                caption: `*_Scan Qr within 15 seconds_*\nYou'll get session id in your log number.`,
-                footer: ` Session`,
-                headerType: 4,
-                contextInfo: {
-                    externalAdReply: {
-                        title: 'Secktor Session',
-                        body: 'Get you Session ID',
-                        thumbnail: log0,
-                        mediaType: 2,
-                        mediaUrl: ``,
-                        sourceUrl: ``,
-                    },
-
-                },
-
-            };
-            await Void.sendMessage(citel.chat, buttonMessaged, {
-                quoted: citel,
-
-            });
-            await sleep(20 * 1000)
-            return citel.reply('Your session is over now.')
-
-
-        }
-    )
     //---------------------------------------------------------------------------
 cmd({
             pattern: "unban",
-            category: "misc",
+            category: "owner",
             filename: __filename,
             desc: "Unbans banned user (from using bot)."
         },
@@ -104,7 +62,7 @@ cmd({
     cmd({
         pattern: "url",
         alias : ['createurl'],
-        category: "misc",
+        category: "creater",
         filename: __filename,
         desc: "image to url."
     },
@@ -123,7 +81,7 @@ cmd({
 cmd({
     pattern: "trt",
     alias :['translate'],
-    category: "misc",
+    category: "creater",
     filename: __filename,
     desc: "Translate\'s given text in desird language."
 },
@@ -135,12 +93,11 @@ async(Void, citel, text) => {
     else { text = citel.quoted.text; }
     var whole = await translatte(text, { from:"auto",  to: lang , });
     if ("text" in whole) { return await citel.reply('*Translated text:*\n'+whole.text); }
-}
-)
+       }
+  )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "shell",
-            category: "owner",
+            
             filename: __filename,
             desc: "Runs command in Heroku(server) shell."
         },
@@ -157,8 +114,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "eval",
-            category: "owner",
+           
             filename: __filename,
             desc: "Runs js code on node server."
         },
