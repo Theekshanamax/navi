@@ -212,12 +212,10 @@ Void.sendMessage(citel.chat, {
 *👋Hello, ${citel.pushName},*
 ${alivemessage}
 
-🍧Version:-* 0.0.2
-🆙Uptime:-* ${runtime(process.uptime())}
-👤Owner:-* ${Config.ownername}
+🧑‍💻Version: 0.0.1
+🆙Uptime: ${runtime(process.uptime())}
+👤Owner:  ${Config.ownername}
 🎧Branch:-* ${Config.BRANCH}
-
-● Type ${prefix}menu for my command list.
 
 📗Powered by ${Config.ownername}`;
             let aliveMessage = {
