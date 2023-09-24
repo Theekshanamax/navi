@@ -211,12 +211,11 @@ Void.sendMessage(citel.chat, {
             const alivtxt = `
 *👋 Hello, ${citel.pushName},*
 ${alivemessage}
-
-🍧Version:-* 0.0.2
+  
 🆙Uptime:-* ${runtime(process.uptime())}
 👤Owner:-* ${Config.ownername}
-🎧Branch:-* ${Config.BRANCH}
-
+⏰Time:- ${time}
+📅Date:- ${date}
 ● Type ${prefix}menu for my command list.
 
 📗Powered by ${Config.ownername}`;
