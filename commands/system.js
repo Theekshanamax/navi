@@ -63,6 +63,7 @@ cmd({
         pattern: "url",
         alias : ['createurl'],
         category: "creater",
+      react: "🔗",
         filename: __filename,
         desc: "image to url."
     },
@@ -206,10 +207,9 @@ Void.sendMessage(citel.chat, {
               } 
           }) 
           await Void.sendPresenceUpdate('recording', citel.chat);
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Nipuna rangana.*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*🧑‍💻 bot created by theekshana*`
             const alivtxt = `
-*Hello, ${citel.pushName},*
-This is  ${tlang().title}.
+*👋 Hello, ${citel.pushName},*
 ${alivemessage}
 
 🍧Version:-* 0.0.2
