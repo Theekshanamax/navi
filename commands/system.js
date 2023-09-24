@@ -209,6 +209,7 @@ Void.sendMessage(citel.chat, {
           await Void.sendPresenceUpdate('recording', citel.chat);
             let alivemessage = Config.ALIVE_MESSAGE || `*🧑‍💻 Bot created by theekshana*`
             const alivtxt = `
+
 *👋Hello, ${citel.pushName},*
 ${alivemessage}
 ┏━━━━━━━━━━━━⛵
