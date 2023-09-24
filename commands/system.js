@@ -207,13 +207,17 @@ Void.sendMessage(citel.chat, {
               } 
           }) 
           await Void.sendPresenceUpdate('recording', citel.chat);
-            let alivemessage = Config.ALIVE_MESSAGE || `*🧑‍💻 bot created by theekshana*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*🧑‍💻 Bot created by theekshana*`
             const alivtxt = `
-*👋 Hello, ${citel.pushName},*
+*👋Hello, ${citel.pushName},*
 ${alivemessage}
-  
+
+🍧Version:-* 0.0.2
 🆙Uptime:-* ${runtime(process.uptime())}
 👤Owner:-* ${Config.ownername}
+🎧Branch:-* ${Config.BRANCH}
+
+📗Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
                  url:  await botpic(),
@@ -228,7 +232,6 @@ ${alivemessage}
 
         }
     )
-
     //---------------------------------------------------------------------------
 cmd({
         pattern: "allnotes",
