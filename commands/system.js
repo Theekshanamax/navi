@@ -215,9 +215,9 @@ ${alivemessage}
 🧑‍💻Version: 0.0.1
 🆙Uptime: ${runtime(process.uptime())}
 👤Owner:  ${Config.ownername}
-🎧Branch:-* ${Config.BRANCH}
 
-📗Powered by ${Config.ownername}`;
+
+🤭Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
                  url:  await botpic(),
