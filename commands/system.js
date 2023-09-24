@@ -218,10 +218,10 @@ ${alivemessage}
 ┃ 👤Owner:  ${Config.ownername}
 ┗━━━━━━━━━━━━⛷
 
-┏                🧑‍💻               ┓
- ⚚ join king-x whatsapp bot group ⚚
-┗                                  ┛
-*https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N*
+                 
+ *⚚ join king-x whatsapp bot group ⚚*
+                                 
+https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
 
 🤭Powered by ${Config.ownername}`;
             let aliveMessage = {
