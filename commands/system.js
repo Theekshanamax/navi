@@ -217,7 +217,7 @@ ${alivemessage}
 👤Owner:-* ${Config.ownername}
 🎧Branch:-* ${Config.BRANCH}
 
-📗Powered by ${Config.ownername}`;
+;
             let aliveMessage = {
                 image: {
                  url:  await botpic(),
