@@ -214,11 +214,6 @@ ${alivemessage}
   
 🆙Uptime:-* ${runtime(process.uptime())}
 👤Owner:-* ${Config.ownername}
-⏰Time:- ${time}
-📅Date:- ${date}
-● Type ${prefix}menu for my command list.
-
-📗Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
                  url:  await botpic(),
