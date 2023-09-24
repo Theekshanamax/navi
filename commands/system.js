@@ -194,42 +194,47 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "alive",
-            alias :['honlin'],
             category: "general",
-              react: "🤭",
             filename: __filename,
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*🧑‍💻 created by Theekshana*'
+Void.sendMessage(citel.chat, { 
+              react: { 
+                  text: "❤️", 
+                  key: citel.key 
+              } 
+          }) 
+          await Void.sendPresenceUpdate('recording', citel.chat);
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot developed by Nipuna rangana.*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
-
+This is  ${tlang().title}.
 ${alivemessage}
 
-*Version:-* _0.0.7_
-*Uptime:-* _${runtime(process.uptime())}_
-*Owner:-* _${Config.ownername}_
-*Branch:-* _${Config.BRANCH}_
+🍧Version:-* 0.0.2
+🆙Uptime:-* ${runtime(process.uptime())}
+👤Owner:-* ${Config.ownername}
+🎧Branch:-* ${Config.BRANCH}
 
-_Type ${prefix}menu for my command list._
+● Type ${prefix}menu for my command list.
 
-_Powered by ${Config.ownername}_
-`;
+📗Powered by ${Config.ownername}`;
             let aliveMessage = {
                 image: {
-                    url: await botpic(),
-                },
+                 url:  await botpic(),
+                       },
                 caption: alivtxt,
                 footer: tlang().footer,
                 headerType: 4,
             };
              return Void.sendMessage(citel.chat, aliveMessage, {
                 quoted: citel,
-            });
+            });     
 
         }
     )
+
     //---------------------------------------------------------------------------
 cmd({
         pattern: "allnotes",
