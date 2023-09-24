@@ -211,11 +211,11 @@ Void.sendMessage(citel.chat, {
             const alivtxt = `
 *👋Hello, ${citel.pushName},*
 ${alivemessage}
-┏━━━━━━━━━━━━✈
+┏━━━━━━━━━━━━⛵
 ┃  🧑‍💻Version: 0.0.1
 ┃  🆙Uptime: ${runtime(process.uptime())}
 ┃ 👤Owner:  ${Config.ownername}
-┗━━━━━━━━━━━━━━━━━━━━━━⛷
+┗━━━━━━━━━━━━⛷
 
 🤭Powered by ${Config.ownername}`;
             let aliveMessage = {
