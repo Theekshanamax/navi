@@ -22,7 +22,8 @@ cmd({
      use: '.hirunews', 
      filename: __filename 
  }, 
-async(Void, citel) => citel.reply('hi')
+async(Void, citel) => {  
+  try{  
  const hirunews = await fetchJson(`https://darkapi.technicalhacke4.repl.co/hirunews`); 
            const images = `${hirunews.image}` 
             const title = `${hirunews.title}` 
