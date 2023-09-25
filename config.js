@@ -2,18 +2,25 @@ const fs = require('fs-extra')
 if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/config.env' })
 
 
-//═══════[Required Variables]════════\\
+╲╲╲╲╲┏━━━┓╱╱╱╱╱
+╲┏━━━┻━━━┻━━━┓╱
+╲┃╭━╮┏━━━┓╭━╮┃╱
+╱┃┃╳┃┣◯--◯┫┃╳┃┃╲
+╱┃╰━╯┣━━━┫╰━╯┃╲         
+╱┃┈▊▊▊▊┈▂▃▅▇┈┃╲
+╱┗━━━━━━━━━━━┛╲
+
 global.owner = "94762327630"
 global.mongodb = process.env.MONGODB_URI || "mongodb://uafrsboguxtlxtprt3gp:bNwCHEBLOrh0DiQT6Fmi@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/bm6wfn92by95j9x?replicaSet=rs0"
 global.port= process.env.PORT || 5000
 global.email = 'not@gmail.com'
-global.github = 'https://github.com/SamPandey001/Secktor-Md'
+global.github = 'https://github.com/Theekshanamax/navi'
 global.location = 'Colombo SL'
 global.gurl = 'https://instagram.com/' // add your username
 global.sudo = process.env.SUDO || '94762327630'
 global.devs = '94762327630';
-global.website = 'https://github.com/SamPandey001/Secktor-Md' //wa.me/+91000000000000
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/58bc1e17a88033038cb80.jpg'
+global.website = 'https://github.com/Theekshanamax/navi' //wa.me/+91000000000000
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/819114e4c3dbd6bf0b07b.jpg'
 module.exports = {
   botname:   process.env.BOT_NAME === undefined ? 'king-x' : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'king-x' : process.env.OWNER_NAME,
