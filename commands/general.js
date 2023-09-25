@@ -120,12 +120,12 @@ cmd({
 
 *🍽️ Forks:* ${data.forks_count} forks
 
-*🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
+*🍁 Repo:* https://github.com/Theekshanamax/navi
 
 *Group1:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
 
 *Deploy Your Own:*-
-https://github.com/Theekshanamax/navi/`
+https://github.com/Theekshanamax/navi`
 
 	let buttonMessaged = {
             image: { url: await botpic() },
