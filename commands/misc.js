@@ -121,7 +121,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              pattern: "uptime",
              alias: ["runtime"],
              desc: "Tells runtime/uptime of bot.",
-             category: "misc",
+             category: "creater",
 	     react: "⏳",
              filename: __filename,
          },
@@ -325,7 +325,7 @@ cmd({
 cmd({
   pattern: "bot",
   desc: "activates and deactivates bot.\nuse buttons to toggle.",
-  category: "misc",
+  category: "owner",
   filename: __filename,
 },
 async(Void, citel, text,{isCreator}) => {
@@ -386,7 +386,8 @@ let buttons = [{
  cmd({
              pattern: "antilink",
              desc: "activates and deactivates antilink.\nuse buttons to toggle.",
-             category: "group",
+             category: "owner",
+	     react: "🔒",
              filename: __filename,
          },
          async(Void, citel, text) => {
