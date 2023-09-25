@@ -19,6 +19,7 @@ cmd({
     alias :['gpt'],
     desc: "chat with an AI(GPT)",
     category: "AI",
+    react: "💭",
     use: '<Hii,Secktor>',
     filename: __filename,
 },
