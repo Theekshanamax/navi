@@ -1,7 +1,7 @@
 {
   "name": "KING-X 🧑‍💻",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
-  "logo": "https://telegra.ph/file/b55bb6ba03fa109866144.jpg72656e6465722e636f6d2f6d61696e2e6a7067",
+  "logo": "https://telegra.ph/file/b55bb6ba03fa109866144.jpg",
   "keywords": ["nodejs", "bot", "King-x"],
   "success_url": "/",
   "stack": "container",
