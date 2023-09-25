@@ -39,6 +39,7 @@ cmd({
             alias: ["s"],
             desc: "Makes sticker of replied image/video.",
             category: "group",
+	    react: "🏝️",
             use: '<reply to any image/video.>',
         },
         async(Void, citel, text) => {
@@ -124,13 +125,14 @@ cmd({
         pattern: "support",
         desc: "Sends official support group link.",
         category: "group",
+	react: "👍",
         filename: __filename,
     },
     async(Void, citel, text) => {
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/Bl2F9UTVU4CBfZU6eVnrbC`,
+            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N`,
         });
 
     }
@@ -187,6 +189,7 @@ cmd({
             pattern: "unblock",
             desc: "Unblocked to the quoted user.",
             category: "owner",
+	    react: "🔓",
             filename: __filename,
 
         },
@@ -205,6 +208,7 @@ cmd({
         pattern: "ujid",
         desc: "get jid of all user in a group.",
         category: "owner",
+        react: "✍️",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -225,6 +229,7 @@ cmd({
         pattern: "tagall",
         desc: "Tags every person of group.",
         category: "group",
+	react: "👥",
         filename: __filename,
     },
     async(Void, citel, text,{ isCreator }) => {
@@ -236,7 +241,7 @@ cmd({
         if (!isAdmins) return citel.reply(tlang().admin);
 
         let textt = `
-══✪〘   *Tag All*   〙✪══
+━━━⚚   *Tag All*   ⚚━━━
 
 ➲ *Message :* ${text ? text : "blank"}\n\n
 ➲ *Author:* ${citel.pushName} 🔖
@@ -255,7 +260,7 @@ cmd({
 
 //---------------------------------------------------------------------------
 cmd({
-            pattern: "request",
+            
             desc: "Sends requst to main Bot developer.",
             category: "group",
             filename: __filename,
@@ -289,7 +294,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "retrive",
+            
             desc: "Copies and Forwords viewonce message.",
             category: "group",
             filename: __filename,
@@ -313,7 +318,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "rwarn",
+            
             desc: "Deletes all previously given warns of quoted user.",
             category: "group",
             filename: __filename,
@@ -532,8 +537,8 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "leaderboard",
-            alias: ["deck"],
+            
+            
             desc: "To check leaderboard",
             category: "general",
             filename: __filename,
@@ -637,6 +642,7 @@ cmd({
             pattern: "kick",
             desc: "Kicks replied/quoted user from group.",
             category: "group",
+	    react: "🧑‍💻",
             filename: __filename,
             use: '<quote|reply|number>',
         },
@@ -661,7 +667,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "memegen",
+            
             desc: "Write text on quoted image.",
             category: "group",
             filename: __filename,
@@ -924,6 +930,7 @@ cmd({
             desc: "blocks that person",
             fromMe: true,
             category: "owner",
+	   react: "🔒",
             filename: __filename,
             use: '<quote/reply user.>',
         },
