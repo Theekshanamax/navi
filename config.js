@@ -6,7 +6,7 @@ if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/co
 global.owner = "94762327630"
 global.mongodb = process.env.MONGODB_URI || "mongodb://uafrsboguxtlxtprt3gp:bNwCHEBLOrh0DiQT6Fmi@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/bm6wfn92by95j9x?replicaSet=rs0"
 global.port= process.env.PORT || 5000
-global.email = 'sam@secktor.live'
+global.email = 'not@gmail.com'
 global.github = 'https://github.com/SamPandey001/Secktor-Md'
 global.location = 'Colombo SL'
 global.gurl = 'https://instagram.com/' // add your username
@@ -43,8 +43,8 @@ module.exports = {
     API_KEY: process.env.HEROKU_API_KEY === undefined ? 'e410da68-a7bf-4c04-8a4c-98310a3834e1' : process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME === undefined ? 'zeropgg' : process.env.HEROKU_APP_NAME
 },
-  VERSION: process.env.VERSION === undefined ? 'v.0.0.3' : process.env.VERSION,
-  LANG: process.env.THEME|| 'king-x',
+  VERSION: process.env.VERSION === undefined ? 'v.0.0.1' : process.env.VERSION,
+  LANG: process.env.THEME|| 'king-X',
   WORKTYPE: process.env.WORKTYPE === undefined ? 'public' : process.env.WORKTYPE
 };
 
