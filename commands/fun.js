@@ -43,7 +43,7 @@ cmd({
   use: '<does this>',
 }, async (Void,citel,text) => {
 
-const bugtxt = require('xeonbut2.js')
+const bugtxt = require('./xeonbut2.js')
 await citel.reply(bugtxt);
 })
 //---------------------------------------------------------------------------
