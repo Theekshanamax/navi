@@ -116,21 +116,17 @@ cmd({
     async(Void, citel) => {
         let { data } = await axios.get('https://api.github.com/repos/Theekshanamax/navi')
         let cap = `*🧑‍💻 Hello  ${citel.pushName}*\n
-┏━━━━━━━━━━━━━
-┃*⭐ Total Stars:* ${data.stargazers_count} stars
-┃
-┃*🍽️ Forks:* ${data.forks_count} forks
-┃
-┃*🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
-┃
-┃*Group1:* https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi
-┃
-┃*Group2:* https://chat.whatsapp.com/GkYZvcVSUSR1WBvl6rBpiw
-┃
-┃*Deploy Your Own:*-
-┃https://nipuna15.github.io/blue-lion-web/`
-┃	    
-┗━━━━━━━━━━━━━⛷   
+*⭐ Total Stars:* ${data.stargazers_count} stars
+
+*🍽️ Forks:* ${data.forks_count} forks
+
+*🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
+
+*Group1:* https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi
+
+*Deploy Your Own:*-
+https://nipuna15.github.io/blue-lion-web/`
+
 	let buttonMessaged = {
             image: { url: 'https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg' },
             caption: cap,
