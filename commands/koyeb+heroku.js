@@ -19,7 +19,8 @@ cmd(
     pattern: "updatenow",
     desc: "update bot with main repo.",
     filename: __filename,
-    category: "misc",
+    category: "owner",
+    react: "⏲️",
   },
   async (Void,citel,text,{isCreator}) => {
     async function updatedb() {	
@@ -74,7 +75,7 @@ cmd(
     pattern: "getvar",
     desc: "get desired var from koyeb.",
     filename: __filename,
-    category: "misc",
+    category: "owner",
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
@@ -100,7 +101,7 @@ cmd(
     pattern: "getallvar",
     desc: "get all vars from koyeb.",
     filename: __filename,
-    category: "misc",
+    category: "owner",
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
@@ -126,7 +127,7 @@ cmd(
     pattern: "setvar",
     desc: "set var in koyeb.",
     filename: __filename,
-    category: "misc",
+    category: "owner",
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
@@ -156,7 +157,7 @@ cmd(
     pattern: "delvar",
     desc: "delete var from koyeb.",
     filename: __filename,
-    category: "misc",
+    category: "setvar",
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
