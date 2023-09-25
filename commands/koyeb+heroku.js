@@ -157,7 +157,7 @@ cmd(
     pattern: "delvar",
     desc: "delete var from koyeb.",
     filename: __filename,
-    category: "setvar",
+    category: "owner",
   },
   async (Void,citel,text,{isCreator}) => {
        if(!isCreator) return citel.reply(tlang().owner);
