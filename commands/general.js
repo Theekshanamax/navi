@@ -122,13 +122,13 @@ cmd({
 
 *🍁 Repo:* https://github.com/nipuna15/Blue-Lion-V2
 
-*Group1:* https://chat.whatsapp.com/JBjM2yRpqJD5rGUEKQOpHi
+*Group1:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
 
 *Deploy Your Own:*-
-https://nipuna15.github.io/blue-lion-web/`
+https://github.com/Theekshanamax/navi/`
 
 	let buttonMessaged = {
-            image: { url: 'https://raw.githubusercontent.com/nipuna15/nipuna15/main/IMG-20230613-WA0008.jpg' },
+            image: { url: 'await botpic(),
             caption: cap,
         };
         return await Void.sendMessage(citel.chat, buttonMessaged, {
