@@ -70,6 +70,7 @@ cmd({
     alias : ['dall','dall-e'],
     desc: "Create Image by AI",
     category: "AI",
+   react: "🔐",
     use: '<an astronaut in mud.>',
     filename: __filename,
 },
