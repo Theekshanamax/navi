@@ -116,17 +116,16 @@ cmd({
     async(Void, citel) => {
         let { data } = await axios.get('https://api.github.com/repos/Theekshanamax/navi')
         let cap = `*🧑‍💻 Hello  ${citel.pushName}*\n
-┃ *⭐ Total Stars:* ${data.stargazers_count} stars
-┃
-┃ *🍽️ Forks:* ${data.forks_count} forks
-┃
-┃ *🍁 Repo:* https://github.com/Theekshanamax/navi
-┃
-┃ *👥Group1:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
-┃
-┃ *🧑‍💻Deploy Your Own:*-
-┃  https://github.com/Theekshanamax/navi`
-┗━━━━━━━━━━━━━━
+*⭐ Total Stars:* ${data.stargazers_count} stars
+
+*💻 Forks:* ${data.forks_count} forks
+
+*🐱 Repo:* https://github.com/Theekshanamax/navi
+
+*👥Group1:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
+
+*🧑‍💻Deploy Your Own:*-
+ https://github.com/Theekshanamax/navi`
 	let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
