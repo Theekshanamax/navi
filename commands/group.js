@@ -243,8 +243,8 @@ cmd({
         let textt = `
 ━━━⚚   *Tag All*   ⚚━━━
 
-➲ *Message :* ${text ? text : "blank"}\n\n
-➲ *Author:* ${citel.pushName} 🔖
+💭 *Message :* ${text ? text : "blank"}\n\n
+🤭 *Author:* ${citel.pushName} 🔖
 `
         for (let mem of participants) {
             textt += `📍 @${mem.id.split("@")[0]}\n`;
@@ -953,8 +953,8 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-        pattern: "broadcast",
-        alias: ["bc"],
+        
+       
         desc: "Bot makes a broadcast in all groups",
         fromMe: true,
         category: "group",
@@ -1068,15 +1068,13 @@ cmd({ on: "text" }, async(Void, citel) => {
                     url: await botpic(),
                 },
                 caption: `
-╔════◇
-║ *Wow,Someone just*
-║ *leveled Up huh⭐*
-║ *👤Name*: ${citel.pushName}
-║ *🎐Level*: ${sck1.level}🍭
-║ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
-║ *📍Role*: *${role}*
-║ *Enjoy🥳*
-╚════════════╝
+┏━━━━━⛵
+┃ *🧑‍💻created by theekshana*
+┃ *👤Name*: ${citel.pushName}
+┃ *🚏Level*: ${sck1.level}🚂
+┃ *🛑Exp*: ${sck1.xp} / ${Levels.xpFor(sck1.level + 1)}
+┃ *🐱Role*: *${role}*
+┗━━━━━━━━━━━⛷
 `,
             }, {
                 quoted: citel,
