@@ -114,16 +114,16 @@ cmd({
         filename: __filename,
     },
     async(Void, citel) => {
-        let { data } = await axios.get('https://github.com/Theekshanamax/navi')
-        let cap = `Hellow ${citel.pushName}\n
+        let { data } = await axios.get('https://api.github.com/repos/SamPandey001/Secktor-Md')
+        let cap = `Hey ${citel.pushName}\n
 ┏━━━━━━━━━━━━⛵
 ┃ *⭐ Total Stars:* ${data.stargazers_count} stars
 ┃ *💻 Forks:* ${data.forks_count} foks
 ┃ *👥 Group:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N
 ┃ *🧑‍💻Deploy Your Own:*-Theekshana`
 ┃      
-┗━━━━━━━━━━━━⛷
-	let buttonMessaged = {
+┗━━━━━━━━━━━━⛷'
+        let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
             footer: tlang().footer,
