@@ -363,6 +363,7 @@ cmd({
             pattern: "profile",
             desc: "Shows profile of user.",
             category: "group",
+	    react: "📸",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -460,6 +461,7 @@ cmd({
             pattern: "rank",
             desc: "Sends rank card of user.",
             category: "group",
+	    react: "📸",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -612,7 +614,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "promote",
+            
             desc: "Provides admin role to replied/quoted user",
             category: "group",
             filename: __filename,
@@ -697,6 +699,7 @@ cmd({
             pattern: "group",
             desc: "mute and unmute group.",
             category: "group",
+	    react: "🆗",
             filename: __filename,
         },
         async(Void, citel, text) => {
@@ -724,7 +727,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "grouppic",
+                   
             desc: "Sets a profile pic in Group..",
             category: "group",
             filename: __filename,
@@ -759,6 +762,7 @@ cmd({
             alias: ["htag"],
             desc: "Tags everyperson of group without mentioning their numbers",
             category: "group",
+	    react: "✍️",
             filename: __filename,
             use: '<text>',
         },
@@ -785,6 +789,7 @@ cmd({
             desc: "Add that person in group",
             fromMe: true,
             category: "group",
+	    react: "🆗",
             filename: __filename,
             use: '<number>',
         },
@@ -808,6 +813,7 @@ cmd({
             pattern: "getjids",
             desc: "Sends chat id of every groups.",
             category: "group",
+	    react: "🆗",
             filename: __filename,
         },
         async(Void, citel, text,{ isCreator }) => {
@@ -833,7 +839,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-        pattern: "demote",
+     
         desc: "Demotes replied/quoted user from group",
         category: "group",
         filename: __filename,
@@ -865,6 +871,7 @@ cmd({
             alias: ["delete"],
             desc: "Deletes message of any user",
             category: "group",
+	    react: "🗑️",
             filename: __filename,
             use: '<quote/reply message.>',
         },
