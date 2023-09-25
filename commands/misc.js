@@ -32,7 +32,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
              
              desc: "Makes static sticker of text.",
              category: "creater",
-	     react: "🔒",
+	     react: "🔓",
              filename: __filename,
          },
          async(Void, citel, text) => {
