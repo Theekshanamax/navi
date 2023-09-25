@@ -303,7 +303,7 @@ cmd({
     pattern: "toaudio",
     alias:['mp3','tomp3'],
     desc: "changes type to audio.",
-    category: "converter",
+    category: "creater",
     use: '<reply to any Video>',
     filename: __filename
 },
