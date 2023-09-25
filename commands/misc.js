@@ -17,9 +17,10 @@ const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter")
 
  //---------------------------------------------------------------------------
  cmd({
-             pattern: "attp",
+             
              desc: "Makes glowing sticker of text.",
-             category: "sticker",
+             category: "creater",
+	     react: "🔒",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -28,9 +29,10 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/attp/${text}`)
          }
      )
  cmd({
-             pattern: "ttp",
+             
              desc: "Makes static sticker of text.",
-             category: "sticker",
+             category: "creater",
+	     react: "🔒",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -40,7 +42,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "exec",
+        
              desc: "Evaluates quoted code with given language.",
              category: "misc",
              filename: __filename,
@@ -71,7 +73,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
  cmd({
              pattern: "readmore",
              desc: "Adds *readmore* in given text.",
-             category: "misc",
+             category: "creater",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -83,7 +85,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
  cmd({
              pattern: "steal",
              desc: "Makes sticker of replied image/video.",
-             category: "sticker",
+             category: "creater",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -120,6 +122,7 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
              alias: ["runtime"],
              desc: "Tells runtime/uptime of bot.",
              category: "misc",
+	     react: "⏳",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -129,9 +132,9 @@ let a = await getBuffer(`https://citel-x.herokuapp.com/ttp/${text}`)
      )
      //---------------------------------------------------------------------------
  cmd({
-             pattern: "wm",
+             
              desc: "Makes wa.me of quoted or mentioned user.",
-             category: "misc",
+             category: "creater",
              filename: __filename,
          },
          async(Void, citel, text) => {
@@ -175,7 +178,7 @@ cmd({
  cmd({
              pattern: "pick",
              desc: "Pics random user from Group",
-             category: "misc",
+             category: "creater",
              filename: __filename,
          },
          async(Void, citel, match) => {
@@ -214,7 +217,7 @@ cmd({
  cmd({
              pattern: "fliptext",
              desc: "Flips given text.",
-             category: "misc",
+             category: "creater",
              use: '<query>',
              filename: __filename,
          },
@@ -229,7 +232,7 @@ cmd({
  cmd({
              pattern: "mp4fromurl",
              desc: "download mp4 from url.",
-             category: "misc",
+             category: "creater",
              use: '<url>',
              filename: __filename,
          },
@@ -261,7 +264,8 @@ cmd({
  cmd({
              pattern: "emix",
              desc: "Mixes two emojies.",
-             category: "misc",
+             category: "creater",
+	   react: "🔁",
              use: '<query>',
              filename: __filename,
          },
@@ -279,71 +283,7 @@ cmd({
              }
          }
      )
-     //---------------------------------------------------------------------------
- cmd({
-             pattern: "chatbot",
-             desc: "activates and deactivates chatbot.\nuse buttons to toggle.",
-             category: "misc",
-             filename: __filename
-         },
-         async(Void, citel, text,{ isCreator }) => {
-             if (!isCreator) return citel.reply(tlang().owner)
-             const { chatbot } = require('../lib/');
-             switch (text.split(" ")[0]) {
-                 case "on":
-                     {
-                      let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                     if (!chatbott) {
-                         await new chatbot({ id: 'chatbot', worktype: "true" }).save()
-                         return citel.reply('Chatbot activated successfully.')
-                     } else {
-                         if (chatbott.worktype == "true") return citel.reply("Chatbot was already enabled.")
-                         await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         citel.reply('Enabled chatbot successfully.')
-                         return
-                     }      
-                     }
-                     break
-                 case "off":
-                     {
-                      let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                     if (!chatbott) {
-                         await new chatbot({ id: 'chatbot', worktype: "false" }).save()
-                         return citel.reply('Chatbot deactivated successfully.')
-                     } else {
-                         if (chatbott.worktype == "false") return citel.reply("Chatbot was already disabled.")
-                         await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                         citel.reply('Disabled chatbot successfully.')
-                         return
-                     }
-                     }
-                     break
-                 default:
-                     {
-                         let buttons = [{
-                                 buttonId: `${prefix}chatbot on`,
-                                 buttonText: {
-                                     displayText: "Turn On",
-                                 },
-                                 type: 1,
-                             },
-                             {
-                                 buttonId: `${prefix}chatbot off`,
-                                 buttonText: {
-                                     displayText: "Turn Off",
-                                 },
-                                 type: 1,
-                             },
-                         ];
-                         let chatbott= await chatbot.findOne({ id: 'chatbot' })
-                         await Void.sendButtonText(citel.chat, buttons, `Chatbot Status: ${chatbott.worktype} `, 'Secktor-Md', citel);
-                        citel.reply(`Chatbot Status: ${chatbott.worktype} \n*Use:* ${prefix}chatbot on\n${prefix}chatbot off`)
-                        }
-             }
- 
- 
-         }
-     )
+
      //---------------------------------------------------------------------------
  cmd({
              pattern: "ebinary",
