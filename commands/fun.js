@@ -24,7 +24,7 @@ cmd({
  }, 
  async(Void, citel) => { 
  try{ 
- const hirunews = await fetchJson(`https://hirunews.aquaapk-dl.repl.co/api/latest`); 
+ const hirunews = await fetchJson(`https://darkapi.technicalhacke4.repl.co/hirunews`); 
            const images = `${hirunews.image}` 
             const title = `${hirunews.title}` 
             const date = `${hirunews.time}` 
@@ -39,8 +39,8 @@ cmd({
 //---------------------------------------------------------------------------
  
  cmd({  
-      pattern: "nasa",  
-      alias: ["news/nasa"],  
+      pattern: "derana",  
+      alias: ["news"],  
       react: "🀄",  
       desc: "",  
       category: "news",  
@@ -49,7 +49,7 @@ cmd({
   },  
   async(Void, citel) => {  
   try{  
-  const nasa = await fetchJson(`https://darkapi--technicalhacke4.repl.co/nasanews`);  
+  const nasa = await fetchJson(`https://darkapi.technicalhacke4.repl.co/derananews`);  
   
             const images = `${nasa.result.image}`  
              const title = `${nasa.result.title}` 
