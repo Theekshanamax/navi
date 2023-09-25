@@ -254,6 +254,7 @@ cmd({
         alias: ["about"],
         desc: "To check bot status",
         category: "general",
+	react: "💡",
         filename: __filename,
     },
     async(Void, citel) => {
@@ -270,6 +271,7 @@ cmd({
 ┃ *👤Owner:*  ${Config.ownername}
 ┃ *💻Powered by ${tlang().title}*
 ┗━━━━━━━━━━━━━🚂
+ created by Theekshana ✍️
 `;
         let buttonMessaged = {
             image: {
