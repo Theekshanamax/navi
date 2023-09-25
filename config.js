@@ -1,15 +1,6 @@
 const fs = require('fs-extra')
 if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname+'/config.env' })
 
-
-╲╲╲╲╲┏━━━┓╱╱╱╱╱
-╲┏━━━┻━━━┻━━━┓╱
-╲┃╭━╮┏━━━┓╭━╮┃╱
-╱┃┃╳┃┣◯--◯┫┃╳┃┃╲
-╱┃╰━╯┣━━━┫╰━╯┃╲         
-╱┃┈▊▊▊▊┈▂▃▅▇┈┃╲
-╱┗━━━━━━━━━━━┛╲
-
 global.owner = "94762327630"
 global.mongodb = process.env.MONGODB_URI || "mongodb://uafrsboguxtlxtprt3gp:bNwCHEBLOrh0DiQT6Fmi@n1-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017,n2-c2-mongodb-clevercloud-customers.services.clever-cloud.com:27017/bm6wfn92by95j9x?replicaSet=rs0"
 global.port= process.env.PORT || 5000
