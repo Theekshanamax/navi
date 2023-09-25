@@ -16,7 +16,7 @@ const fetch = require('node-fetch');
 //---------------------------------------------------------------------------
 cmd({
     pattern: "chat",
-    alias :['gpt'],
+    alias :['gpt','කාතා'],
     desc: "chat with an AI(GPT)",
     category: "AI",
     react: "💭",
