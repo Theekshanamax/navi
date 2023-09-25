@@ -116,7 +116,6 @@ cmd({
     async(Void, citel) => {
         let { data } = await axios.get('https://api.github.com/repos/Theekshanamax/navi')
         let cap = `*🧑‍💻 Hello  ${citel.pushName}*\n
-┏━━━━━━━━━━━━	
 ┃ *⭐ Total Stars:* ${data.stargazers_count} stars
 ┃
 ┃ *🍽️ Forks:* ${data.forks_count} forks
