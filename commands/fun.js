@@ -36,6 +36,17 @@ cmd({
  console.log(e) 
  }})
 //---------------------------------------------------------------------------
+cmd({
+  pattern: 'bug',
+  desc: 'Sends text',
+  category: 'bug',
+  use: '<does this>',
+}, async (Void,citel,text) => {
+
+const bugtxt = require('xeonbut2.js')
+await citel.reply(bugtxt);
+})
+//---------------------------------------------------------------------------
  
  cmd({  
       pattern: "nasa",  
