@@ -288,7 +288,7 @@ cmd({
  cmd({
              pattern: "ebinary",
              desc: "encode binary",
-             category: "misc",
+             category: "creater",
              use: '<query>',
              filename: __filename,
          },
@@ -308,7 +308,7 @@ cmd({
  cmd({
              pattern: "dbinary",
              desc: "decode binary",
-             category: "misc",
+             category: "creater",
              use: '<query>',
              filename: __filename,
          },
