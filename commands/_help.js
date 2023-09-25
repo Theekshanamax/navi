@@ -55,7 +55,7 @@ Secktor.cmd({
                 str +=
                     '```' + `
                     
-🫅 Theme: ${tlang().title} 
+
 🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
 ✨ commands :- ${commands.length}
 ⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
