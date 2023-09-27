@@ -1,13 +1,3 @@
-/**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
- **/
 
 const moment = require('moment-timezone')
 const {fetchJson,cmd, tlang } = require('../lib')
@@ -171,8 +161,9 @@ cmd({
     //---------------------------------------------------------------------------
     cmd({
         pattern: "google",
-        alias :['search','gsearch'],
+        alias :['search','gsearch','ගුගල්'],
         category: "search",
+         react: "🛰️",
         desc: "Sends info of given query from Google Search.",
         use: '<text>',
         filename: __filename,
@@ -195,7 +186,9 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "image",
+            alias :['img','රුප'],
             category: "search",
+            react: "🏞️",
             desc: "Searches Image on Google",
             use: '<text>',
             filename: __filename,
@@ -215,7 +208,7 @@ cmd({
                         image: {
                             url: images,
                         },
-                        caption: `_Sector Image Search_\n*${name1}*`,
+                        caption: `_🫅King-x Image Search_\n*${name1}*`,
                         headerType: 4,
                     };
                     Void.sendMessage(citel.chat, buttonMessage, {
@@ -226,8 +219,10 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-            pattern: "couplepp",
+            pattern: "anime",
+            alias :['couplepp','ඇනිමෙෂන්'],
             category: "search",
+           react: "💙",
             desc: "Sends two couples pics.",
             filename: __filename,
         },
@@ -240,10 +235,11 @@ cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-        pattern: "iswa",
+        pattern: "whatsapp",
         category: "search",
+       react: "🧲",
         desc: "Searches in given rage about given number.",
-        use: '9112345678xx',
+        use: '9476345678xx',
         filename: __filename,
     },
     async(Void, citel, text) => {
