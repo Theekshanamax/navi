@@ -39,7 +39,7 @@ cmd({
 //---------------------------------------------------------------------------
  
  cmd({  
-      pattern: "derana",  
+      pattern: "sirasa",  
       alias: ["news"],  
       react: "🀄",  
       desc: "",  
@@ -49,7 +49,7 @@ cmd({
   },  
   async(Void, citel) => {  
   try{  
-  const nasa = await fetchJson(`https://darkapi.technicalhacke4.repl.co/derananews`);  
+  const nasa = await fetchJson(`https://kaveesha-sithum.onrender.com/sirasa-news`);  
   
             const images = `${nasa.result.image}`  
              const title = `${nasa.result.title}` 
