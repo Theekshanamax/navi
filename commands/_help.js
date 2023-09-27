@@ -113,11 +113,11 @@ cmd({
                 let total = await sck1.countDocuments()
                 let str = `
 
-🧑‍💻 𝙾𝚆𝚗𝚎𝚛:- ${vdf}
-✨ commands :- ${commands.length}
-⏳ 𝚄𝚙𝚝𝚒𝚖𝚎:- ${runtime(process.uptime())}
-⏰ Time:- ${time}
-📅 Date:- ${date}
+🧑‍💻 *𝙾𝚆𝚗𝚎𝚛*: ${vdf}
+✨ *commands* : ${commands.length}
+⏳ *𝚄𝚙𝚝𝚒𝚖𝚎*: ${runtime(process.uptime())}
+⏰ *Time*: ${time}
+📅 *Date*: ${date}
 
 
 🫅𝗛𝗘𝗟𝗟𝗢 𝗜'𝗠 𝗞𝗜𝗡𝗚-𝗫🫅
