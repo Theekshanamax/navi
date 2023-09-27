@@ -1,11 +1,4 @@
-/**  Copyright (C) 2023. 
-  Licensed under the  GPL-3.0 License; 
-  You may not use this file except in compliance with the License. 
-  It is supplied in the hope that it may be useful. 
-  * @project_name : RED_Lion_Bot 
-  * @author : Theekshanamax
-  * @description : Red-Lion,A Multi-functional whatsapp bot. 
-  * @version 0.0.2 **/
+
 const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
@@ -15,10 +8,9 @@ const long = String.fromCharCode(8206)
 const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
     //---------------------------------------------------------------------------
-Secktor.cmd({
+cmd({
             
-            alias: ["වැඩ"],
-            desc: "Help list",
+           
             category: "general",
             react: "💝",
             filename: __filename
