@@ -1,13 +1,6 @@
 /**
- Copyright (C) 2022.
- Licensed under the  GPL-3.0 License;
- You may not use this file except in compliance with the License.
- It is supplied in the hope that it may be useful.
- * @project_name : Secktor-Md
+ * @project_name : king x
  *"pattern"යන වචනය නැති ස්තන වෙනස් කරන්න එපා 
- * @author : SamPandey001 <https://github.com/SamPandey001>
- * @description : Secktor,A Multi-functional whatsapp bot.
- * @version 0.0.6
  **/
 
 const { sck, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin,getBuffer, prefix } = require('../lib')
@@ -29,7 +22,7 @@ cmd({
                 citel.reply("Link Invalid, Please Send a valid whatsapp Group Link!");
             let result = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
             await Void.groupAcceptInvite(result)
-                .then((res) => citel.reply("🟩Joined Group"))
+                .then((res) => citel.reply("Joined Group✅"))
                 .catch((err) => citel.reply("Error in Joining Group"));
 
         }
@@ -133,7 +126,7 @@ cmd({
         citel.reply(`*Check your Pm ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: Secktor-Support*\n*Group Link:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N`,
+            caption: `*Group Name:🫅 King-x Support*\n*Group Link:* https://chat.whatsapp.com/EAVBuRArd3XB86fZ8dIY2N`,
         });
 
     }
