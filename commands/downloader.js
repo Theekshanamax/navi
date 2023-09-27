@@ -55,7 +55,7 @@ cmd({
        
 
 cmd({ 
-   pattern: 'apk app', 
+   pattern: 'app', 
    desc: 'Download APK', 
    category: 'downloader', 
    use:'<does this>', 
