@@ -231,7 +231,9 @@ cmd({
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             })
 //---------------------------------------------------------------------------
-cmd({.      pattern: "help",
+cmd({  
+  
+           pattern: "help",
             alias: ["help","මෙනු"],
             desc: "විධාන ලයිස්තුව",
             react: "🇱🇰"
