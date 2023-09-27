@@ -112,7 +112,7 @@ cmd({
                 let total = await sck1.countDocuments()
                 let str = `
 
-🧑‍💻 *Owner*: ${vdf}
+ 🧑‍💻 *Owner*: ${vdf}
 ✨ *Commands* : ${commands.length}
 ⏳ *Uptime*: ${runtime(process.uptime())}
 ⏰ *Time*: ${time}
@@ -126,7 +126,7 @@ cmd({
 
 
 ┌─────────────────────
-│                👨‍💻 *KING-X* 👨‍💻  
+│  👨‍💻 *KING-X* *COMMANDS* 👨‍💻 
 └─────────────────────
 
 
@@ -230,8 +230,42 @@ cmd({
                  };
                 return await Void.sendMessage(citel.chat, buttonMessaged);
             })
+//---------------------------------------------------------------------------
+cmd({
+            alias: ['මෙන්', 'විධාන','නියොග','meni'],
+            desc: "විධාන ලයිස්තුව",
+            react: "🇱🇰"
+        },
+        async(Void, citel, text) => {
+            await Void.sendPresenceUpdate('recording', citel.chat);
+            const { commands } = require('../lib');
+        
+                const time = moment(moment())
+                    .format('HH:mm:ss')
+                moment.tz.setDefault('Asia/KOLKATA')
+                    .locale('id')
+                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                const vdf = Config.ownername
+                let total = await sck1.countDocuments()
+                let str = `
 
-    
+ 🧑‍💻 *Owner*: ${vdf}
+✨ *Commands* : ${commands.length}
+⏳ *Uptime*: ${runtime(process.uptime())}
+⏰ *Time*: ${time}
+📅 *Date*: ${date}
+
+මෙක හදන ගමන් 🔐
+   ` 
+              
+                let buttonMessaged = {
+                    image: { url: THUMB_IMAGE },
+                    caption: str,
+                    footer: tlang().title,
+                    headerType: 4
+                 };
+                return await Void.sendMessage(citel.chat, buttonMessaged);
+            }) 
     //------------------------------------------------
 Secktor.cmd({
         pattern: "owner",
