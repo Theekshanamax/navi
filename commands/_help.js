@@ -220,11 +220,8 @@ cmd({
                     footer: tlang().title,
                     headerType: 4
                  };
-                await Void.sendMessage(citel.chat, { audio: {url : 'https://github.com/Theekshanamax/navi/blob/main/audio/AUD-20230927-WA0025.mp3',}, mimetype: 'audio/mpeg', ptt: true }, { quoted: citel, });
                 return await Void.sendMessage(citel.chat, buttonMessaged);
-            }
-        }
-    )
+            })
 //---------------------------------------------------------------------------
 cmd({  
   
