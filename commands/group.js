@@ -1,6 +1,6 @@
 /**
- * @project_name : king x
- *"pattern"යන වචනය නැති ස්තන වෙනස් කරන්න එපා 
+ * @project_name : king x 
+ *"pattern"යන වචනය නැති ස්තන වෙනස් කරන්න  එපා 
  **/
 
 const { sck, sck1,cmd, jsonformat, botpic, TelegraPh, RandomXP, Config, tlang, warndb, sleep,getAdmin,getBuffer, prefix } = require('../lib')
