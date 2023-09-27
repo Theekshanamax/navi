@@ -236,6 +236,7 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
         pattern: "whatsapp",
+      alias :['hack'],
         category: "search",
        react: "🧲",
         desc: "Searches in given rage about given number.",
