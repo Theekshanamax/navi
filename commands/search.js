@@ -18,7 +18,7 @@ const fetch = require('node-fetch')
     //---------------------------------------------------------------------------
 cmd({
             pattern: "movie",
-            alias :['imdb'],
+            alias :['imdb','චිත්‍රපටි'],
             category: "search",
             react: "🎬",
             desc: "Sends image of asked Movie/Series.",
@@ -30,7 +30,7 @@ cmd({
             let fids = await axios.get(`http://www.omdbapi.com/?apikey=742b2d09&t=${text}&plot=full`);
             let imdbt = "";
             console.log(fids.data)
-            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ``` 𝕂𝕀ℕ𝔾-𝕏```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
+            imdbt += "⚍⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚍\n" + " ``` 𝕂𝕀ℕ𝔾-𝕏 𝕊𝔼𝔸ℝℂℍ```\n" + "⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎⚎\n";
             imdbt += "🎬Title      : " + fids.data.Title + "\n";
             imdbt += "📅Year       : " + fids.data.Year + "\n";
             imdbt += "⭐Rated      : " + fids.data.Rated + "\n";
@@ -62,7 +62,9 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "weather",
+            alias :['කලගුනය'],
             category: "search",
+            react: "⛅",
             desc: "Sends weather info about asked place.",
             use: '<location>',
             filename: __filename,
@@ -74,16 +76,16 @@ cmd({
             );
             let textw = "";
             textw += `*🌟Weather of  ${text}*\n\n`;
-            textw += `*Weather:-* ${wdata.data.weather[0].main}\n`;
-            textw += `*Description:-* ${wdata.data.weather[0].description}\n`;
-            textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`;
-            textw += `*Feels Like:-* ${wdata.data.main.feels_like}\n`;
-            textw += `*Pressure:-* ${wdata.data.main.pressure}\n`;
-            textw += `*Humidity:-* ${wdata.data.main.humidity}\n`;
-            textw += `*Humidity:-* ${wdata.data.wind.speed}\n`;
-            textw += `*Latitude:-* ${wdata.data.coord.lat}\n`;
-            textw += `*Longitude:-* ${wdata.data.coord.lon}\n`;
-            textw += `*Country:-* ${wdata.data.sys.country}\n`;
+            textw += `*⛅Weather:-* ${wdata.data.weather[0].main}\n`;
+            textw += `*📋Description:-* ${wdata.data.weather[0].description}\n`;
+            textw += `*🌡️Avg Temp:-* ${wdata.data.main.temp}\n`;
+            textw += `*💁‍♂️Feels Like:-* ${wdata.data.main.feels_like}\n`;
+            textw += `*🌬️Pressure:-* ${wdata.data.main.pressure}\n`;
+            textw += `*💧Humidity:-* ${wdata.data.main.humidity}\n`;
+            textw += `*❄️Humidity:-* ${wdata.data.wind.speed}\n`;
+            textw += `*🌍Latitude:-* ${wdata.data.coord.lat}\n`;
+            textw += `*🌎Longitude:-* ${wdata.data.coord.lon}\n`;
+            textw += `*🌏Country:-* ${wdata.data.sys.country}\n`;
 
             Void.sendMessage(
                 citel.chat, {
