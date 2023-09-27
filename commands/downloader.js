@@ -51,6 +51,46 @@ cmd({
         }
 
     )
+//--------------------------------------------------------------------------- 
+       
+
+cmd({ 
+   pattern: 'apk', 
+   desc: 'Download APK', 
+   category: 'downloader', 
+   use:'<does this>', 
+ }, async(Void,citel,text) => { 
+ const args = text; 
+ let search1 = await apks.search(args); 
+ const id1 = search1[0].id ; 
+ const apkname = search1[0].name ; 
+ let apkdata = await apks.download(id1); 
+ const dla = apkdata.dllink; 
+ const icona = apkdata.icon; 
+ const lastup = apkdata.lastup; 
+ const size = apkdata.size;
+
+ var rep = `* 📱APK Downloader📱*
+
+*🔍 Name :* ${apkname}
+
+*📀 Package Name :* ${id1}
+
+*📲 Update On :* ${lastup}
+
+*📊 Size :* ${size}` ;
+
+await Void.sendMessage(citel.chat,{image:{url:icona,}, caption: rep,});
+ return Void.sendMessage(citel.chat,{ 
+     document: { 
+         url: dla, 
+     }, 
+     fileName: apkname+'.apk', 
+     mimetype: "application/vnd.android.package-archive", 
+ }, { 
+     quoted: citel, 
+ }) 
+});
 
      //---------------------------------------------------------------------------
      cmd({
