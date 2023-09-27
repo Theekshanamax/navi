@@ -222,7 +222,7 @@ cmd({
             pattern: "anime",
             alias :['couplepp','ඇනිමෙෂන්'],
             category: "search",
-           react: "💙",
+           react: "💛",
             desc: "Sends two couples pics.",
             filename: __filename,
         },
