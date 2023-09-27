@@ -100,7 +100,9 @@ cmd({
     //---------------------------------------------------------------------------
 cmd({
             pattern: "horo",
+            alias :['කෙන්දරෙ'],
             category: "search",
+            react: "📝",
             desc: "Gives horoscope info of user.",
             use: '<sign>\n:Example: horo libra',
             filename: __filename,
@@ -118,14 +120,14 @@ cmd({
                         console.log(date);
                         let textw = "";
                         textw += `*🌟 Horoscope of  ${text}*\n\n`;
-                        textw += `*Current Date:* ${json.current_date}.\n`;
-                        textw += `*Sign:* ${text}.\n`;
-                        textw += `*Lucky Time:* ${json.lucky_time}.\n`;
-                        textw += `*Compatibility:* ${json.compatibility}.\n`;
-                        textw += `*Lucky Number:* ${json.lucky_number}.\n`;
-                        textw += `*Lucky Color:* ${json.color}.\n`;
-                        textw += `*Today Mood:* ${json.mood}.\n`;
-                        textw += `*Overall:* ${json.description}.\n`;
+                        textw += `*📅Current Date:* ${json.current_date}.\n`;
+                        textw += `*✍️Sign:* ${text}.\n`;
+                        textw += `*⌚Lucky Time:* ${json.lucky_time}.\n`;
+                        textw += `*👫Compatibility:* ${json.compatibility}.\n`;
+                        textw += `*🪄Lucky Number:* ${json.lucky_number}.\n`;
+                        textw += `*🌈Lucky Color:* ${json.color}.\n`;
+                        textw += `*😘Today Mood:* ${json.mood}.\n`;
+                        textw += `*👍Overall:* ${json.description}.\n`;
                         citel.reply(textw)
                     });
 
