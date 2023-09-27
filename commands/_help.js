@@ -16,7 +16,7 @@ const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
     //---------------------------------------------------------------------------
 Secktor.cmd({
-            pattern: "menu",
+            pattern: "help",
             alias: ["help","මෙනු"],
             desc: "Help list",
             category: "general",
@@ -95,7 +95,7 @@ Secktor.cmd({
     )
     //---------------------------------------------------------------------------
 cmd({
-           
+           pattern: "menu",
             alias: ['මෙනූ', 'විධාන','නියොග'],
             desc: "විධාන ලයිස්තුව",
             react: "🇱🇰"
