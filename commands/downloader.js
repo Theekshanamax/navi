@@ -298,7 +298,6 @@ cmd({
   
  🧑‍💻 type :
   .video ${search.all[0].url}  to get video`
- ⬇️ *Download your video Under*
       
                      
   let butnMessage = {
@@ -317,7 +316,7 @@ await sleep(2000);
                           jpegThumbnail: log0,
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
-                          caption: ` ✍️ Title : ${titleYt}\n 🛰️ : ${fileSizeInMegabytes} MB`, 
+                          caption: '⬆️ Download video`, 
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
   
