@@ -315,7 +315,7 @@ await sleep(2000);
                           jpegThumbnail: log0,
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
-                          caption: '⬆️ Download video`, 
+                          caption: '✍️ Title : ${titleYt}\n 🛰️ : ${fileSizeInMegabytes} MB`,  
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
   
