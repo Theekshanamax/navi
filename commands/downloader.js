@@ -299,8 +299,7 @@ cmd({
  🧑‍💻 type :
   .video ${search.all[0].url}  to get video`
       
-                     
-  let butnMessage = {
+ let butnMessage = {
                         image: {
                             url: thumbnaill,
                         },
