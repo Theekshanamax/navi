@@ -315,7 +315,6 @@ cmd({
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
                           caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`, 
-                          desc:'සමහර අහිමි වීම් අපි හොදම හමුවීම් ළග නතර කරවනවා 😊🪄🕊️',
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
   
