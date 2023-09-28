@@ -40,34 +40,7 @@ const { cmd } = require('../lib')
   }})
 //---------------------------------------------------------------------------
  
-cmd({
 
-  pattern: "antibot", 
-      react: "🤐",  
-      desc: "",  
-      category: "antibot",  
-      use: '.antibot',  
-      filename: __filename  
-  },  
-    async(Void, citel) => {  
-
-  if (!match || (match !== 'on' && match !== 'off')) return await message.reply('_Please provide a valid match option._ *Use either "on" or "off".*');
-
-  if (match === 'on') {
-
-    await antibot.set(message.chat, true);
-
-    await message.send('_Antibot Activated_');
-
-  } else if (match === 'off') {
-
-    await antibot.delete(message.chat)
-
-    await message.send('_Antibot Deactivated_');
-
-  }
-
-});
     //---------------------------------------------------------------------------
     cmd({
      
