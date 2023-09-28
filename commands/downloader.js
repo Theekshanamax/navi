@@ -299,14 +299,14 @@ cmd({
   type :
   .video ${search.all[0].url}  to get video`
   
-  let buttonMessage = {
+  let butnMessage = {
                         image: {
                             url: thumbnaill,
                         },
                         caption: caption,
                         headerType: 4,
                     };
-                    Void.sendMessage(citel.chat, buttonMessage, {
+                    Void.sendMessage(citel.chat, butnMessage, {
                         quoted: citel,
                     });
                          let buttonMessage = {  
@@ -315,6 +315,7 @@ cmd({
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
                           caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`, 
+                          desc:'සමහර අහිමි වීම් අපි හොදම හමුවීම් ළග නතර කරවනවා 😊🪄🕊️',
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
   
