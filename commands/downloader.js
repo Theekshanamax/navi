@@ -246,45 +246,7 @@ ZIP CODE : 10080
 
     )
     //---------------------------------------------------------------------------
-cmd({ 
-             pattern: "video", 
-            alias :['විඩියො','vd','media'],
-             desc: "Downloads video from yt.", 
-             category: "downloader", 
-             filename: __filename, 
-             use: '<faded-Alan Walker>', 
-         }, 
-         async(Void, citel, text) => { 
- Void.sendMessage(citel.chat, { react: { text: "🔎", key: citel.key }}) 
- if (!text) return citel.reply(`enter video name.`); 
- let yts = require("secktor-pack"); 
-   let search = await yts(text); 
-   let thumbnail = search.all[0].thumbnail; 
-   let caption = `✍️title : ${search.all[0].title}
-   
-  📝description : ${search.all[0].description}
-  
-  🖇️url: ${search.all[0].url}
-  
-  📔Author: ${search.all[0].author}
-  
-  ⏳duration: ${search.all[0].duration}
-  
-  🧑‍💻type :
-  .video ${search.all[0].url}  to get video`
-  
-  let buttonMessage = {
-                        image: {
-                            url: thumbnail,
-                        },
-                        caption: caption,
-                        headerType: 4,
-                    };
-                    Void.sendMessage(citel.chat, buttonMessage, {
-                        quoted: citel,
-                    });
-          }
-    )
+
     //---------------------------------------------------------------------------
 cmd({ 
              pattern: "tiktok", 
