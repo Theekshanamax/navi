@@ -299,7 +299,7 @@ cmd({
  🧑‍💻 type :
   .video ${search.all[0].url}  to get video`
                      
-  ⬇️ *Download your video below*
+  ⬇️ Download your video Under'
       
                      
   let butnMessage = {
