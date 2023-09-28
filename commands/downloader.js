@@ -309,6 +309,7 @@ cmd({
                     Void.sendMessage(citel.chat, butnMessage, {
                         quoted: citel,
                     });
+await sleep(2000);
                          let buttonMessage = {  
                           video: fs.readFileSync(`./${randomName}`),
                           jpegThumbnail: log0,
