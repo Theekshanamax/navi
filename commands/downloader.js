@@ -247,7 +247,7 @@ ZIP CODE : 10080
     )
     //---------------------------------------------------------------------------
 cmd({ 
-             pattern: "video", 
+             pattern: "media", 
             alias :['විඩියො','vd'],
              desc: "Downloads video from yt.", 
              category: "downloader", 
@@ -255,56 +255,36 @@ cmd({
              use: '<faded-Alan Walker>', 
          }, 
          async(Void, citel, text) => { 
- Void.sendMessage(citel.chat, {  
-               react: {  
-                   text: "🎥",  
-                   key: citel.key  
-               }  
-           })  
-             let yts = require("secktor-pack"); 
-             let search = await yts(text); 
-             let anu = search.videos[0]; 
-             let urlYt = anu.url 
-             const getRandom = (ext) => { 
-                 return `${Math.floor(Math.random() * 10000)}${ext}`; 
-             }; 
-                 let infoYt = await ytdl.getInfo(urlYt); 
-                 if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
-                 let titleYt = infoYt.videoDetails.title; 
-                 let randomName = getRandom(".mp4"); 
-                 citel.reply('📥 Downloadig Your Video.') 
-                 const stream = ytdl(urlYt, { 
-                         filter: (info) => info.itag == 22 || info.itag == 18, 
-                     }) 
-                     .pipe(fs.createWriteStream(`./${randomName}`)); 
-                 await new Promise((resolve, reject) => { 
-                     stream.on("error", reject); 
-                     stream.on("finish", resolve); 
-                 }); 
-                 let stats = fs.statSync(`./${randomName}`); 
-                 let fileSizeInBytes = stats.size; 
-                 let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
-                 if (fileSizeInMegabytes <= dlsize) { 
+ Void.sendMessage(citel.chat, { react: { text: "🔎", key: citel.key }}) 
+ if (!text) return citel.reply(`enter video name.`); 
+ let yts = require("secktor-pack"); 
+   let search = await yts(text); 
+   let thumbnail = search.all[0].thumbnail; 
+   let caption = `title : ${search.all[0].title}
+   
+  description : ${search.all[0].description}
   
-                         let buttonMessage = {  
-                          video: fs.readFileSync(`./${randomName}`),
-                          jpegThumbnail: log0,
-                          mimetype: 'video/mp4',  
-                          fileName: `${titleYt}.mp4`, 
-                          caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`, 
-                          desc:'සමහර අහිමි වීම් අපි හොදම හමුවීම් ළග නතර කරවනවා 😊🪄🕊️',
-                      }  
-                   Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
+  url: ${search.all[0].url}
   
-                  return fs.unlinkSync(`./${randomName}`); 
-                 } else { 
-                     citel.reply(`❌ File size bigger than 100mb.`); 
-                 } 
-                 return fs.unlinkSync(`./${randomName}`);       
+  Author: ${search.all[0].author}
   
+  duration: ${search.all[0].duration}
   
-         } 
-     ) 
+  type :
+  .video ${search.all[0].url}  to get video`
+  
+  let buttonMessage = {
+                        image: {
+                            url: thumbnail,
+                        },
+                        caption: caption,
+                        headerType: 4,
+                    };
+                    Void.sendMessage(citel.chat, buttonMessage, {
+                        quoted: citel,
+                    });
+          }
+    )
     //---------------------------------------------------------------------------
 cmd({ 
              pattern: "tiktok", 
