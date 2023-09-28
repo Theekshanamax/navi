@@ -272,7 +272,7 @@ cmd({
                  if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
                  let titleYt = infoYt.videoDetails.title; 
                  let randomName = getRandom(".mp4"); 
-                 citel.reply('📥 Downloadig Your Video.') 
+                 citel.reply('🧑‍💻 ඉක්මන්ට දෙනො ඉන්න සුදු ❤‍🩹.') 
                  const stream = ytdl(urlYt, { 
                          filter: (info) => info.itag == 22 || info.itag == 18, 
                      }) 
