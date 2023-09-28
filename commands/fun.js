@@ -42,17 +42,13 @@ const { cmd } = require('../lib')
  
 cmd({
 
-  pattern: 'antibot ?(.*)',
-
-  fromMe: true,
-
-  onlyGroup: true,
-
-  desc: 'set antibot',
-
-  type: 'group'
-
-}, 
+  pattern: "antibot", 
+      react: "🤐",  
+      desc: "",  
+      category: "antibot",  
+      use: '.antibot',  
+      filename: __filename  
+  },  
     async(Void, citel) => {  
 
   if (!match || (match !== 'on' && match !== 'off')) return await message.reply('_Please provide a valid match option._ *Use either "on" or "off".*');
