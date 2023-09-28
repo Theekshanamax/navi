@@ -247,8 +247,8 @@ ZIP CODE : 10080
     )
     //---------------------------------------------------------------------------
 cmd({ 
-             pattern: "media", 
-            alias :['විඩියො','vd'],
+             pattern: "video", 
+            alias :['විඩියො','vd','media'],
              desc: "Downloads video from yt.", 
              category: "downloader", 
              filename: __filename, 
@@ -260,17 +260,17 @@ cmd({
  let yts = require("secktor-pack"); 
    let search = await yts(text); 
    let thumbnail = search.all[0].thumbnail; 
-   let caption = `title : ${search.all[0].title}
+   let caption = `✍️title : ${search.all[0].title}
    
-  description : ${search.all[0].description}
+  📝description : ${search.all[0].description}
   
-  url: ${search.all[0].url}
+  🖇️url: ${search.all[0].url}
   
-  Author: ${search.all[0].author}
+  📔Author: ${search.all[0].author}
   
-  duration: ${search.all[0].duration}
+  ⏳duration: ${search.all[0].duration}
   
-  type :
+  🧑‍💻type :
   .video ${search.all[0].url}  to get video`
   
   let buttonMessage = {
