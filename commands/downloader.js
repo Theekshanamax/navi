@@ -286,17 +286,17 @@ cmd({
                  let fileSizeInMegabytes = fileSizeInBytes / (1024 * 1024); 
                  if (fileSizeInMegabytes <= dlsize) { 
   let thumbnaill = search.all[0].thumbnail; 
-   let caption = `title : ${search.all[0].title}
+   let caption = `✍️title : ${search.all[0].title}
    
-  description : ${search.all[0].description}
+ 📝 description : ${search.all[0].description}
   
-  url: ${search.all[0].url}
+ 🖇️ url: ${search.all[0].url}
   
-  Author: ${search.all[0].author}
+ 📚 Author: ${search.all[0].author}
   
-  duration: ${search.all[0].duration}
+ ⏳ duration: ${search.all[0].duration}
   
-  type :
+ 🧑‍💻 type :
   .video ${search.all[0].url}  to get video`
   
   let butnMessage = {
@@ -315,7 +315,6 @@ await sleep(2000);
                           jpegThumbnail: log0,
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
-                          caption: ` 📌 Title : ${titleYt}\n 📥 File Size : ${fileSizeInMegabytes} MB`, 
                           desc:'සමහර අහිමි වීම් අපි හොදම හමුවීම් ළග නතර කරවනවා 😊🪄🕊️',
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
