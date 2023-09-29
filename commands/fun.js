@@ -15,29 +15,34 @@ const { cmd } = require('../lib')
 
 
 //---------------------------------------------------------------------------
- 
- cmd({  
-      pattern: "sirasa",  
-      alias: ["news"],  
-      react: "🀄",  
-      desc: "",  
-      category: "news",  
-      use: '.hirunews',  
-      filename: __filename  
-  },  
-  async(Void, citel) => {  
-  try{  
-  const nasa = await fetchJson(`https://kaveesha-sithum.onrender.com/sirasa-news`);  
-  
-            const images = `${nasa.result.image}`  
-             const title = `${nasa.result.title}` 
-             const news = `${nasa.result.desc}`  
-  
-  await Void.sendMessage(citel.chat,  { image: { url: images }, caption: `\n*${ title }*\n\n _${news}._\n\n*`}, { quoted: citel })  
-  }  
-  catch(e){  
-  console.log(e)  
-  }})
+ cmd({
+            pattern: "news",
+            alias :['News'],
+            desc: "Sei Lankan News.",
+            category: "downloader",
+            react: "🎶",
+            filename: __filename,
+            use: '<text>',
+        },
+        async(Void, citel, text) => {
+        const news = await axios.get("https://news-api.queen-md.repl.co/esana-news");
+          const image = news.data.result.image
+          const title = news.data.result.title
+          const decs = news.data.result.description
+          const date = news.data.result.date_time
+          
+          const caption = `Title : ${title}
+          
+          Description : ${decs}
+          
+          Date : ${date}`;
+        let NewsMessage = {
+                   image: { url: thumbnaill, },
+                   caption: caption,
+                   headerType: 4,
+        };
+        Void.sendMessage(citel.chat, NewsMessage, { quoted: citel, });
+})
 //---------------------------------------------------------------------------
  
 
