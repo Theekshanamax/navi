@@ -272,7 +272,7 @@ cmd({
                  if (infoYt.videoDetails.lengthSeconds >= videotime) return citel.reply(`❌ Video file too big!`); 
                  let titleYt = infoYt.videoDetails.title; 
                  let randomName = getRandom(".mp4"); 
-                 citel.reply('📥 Downloadig Your Video.') 
+                 citel.reply('🔎 Search Your Video.') 
                  const stream = ytdl(urlYt, { 
                          filter: (info) => info.itag == 22 || info.itag == 18, 
                      }) 
@@ -315,7 +315,7 @@ await sleep(2000);
                           jpegThumbnail: log0,
                           mimetype: 'video/mp4',  
                           fileName: `${titleYt}.mp4`, 
-                          caption: `⬇️ Download video`, 
+                          caption: `*⬇️ Download video*`, 
                       }  
                    Void.sendMessage(citel.chat, buttonMessage, { quoted: citel }); 
   
