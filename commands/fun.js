@@ -44,10 +44,11 @@ const { cmd } = require('../lib')
         Void.sendMessage(citel.chat, NewsMessage, { quoted: citel, });
 })
 //---------------------------------------------------------------------------
-smd({
+cmd({
         pattern: "wallpaper",
         desc: "To get Random Pics",
-       category: "Anime Pics",
+        category: "downloader",
+        react: "☺️",
         filename: __filename
     },
 
