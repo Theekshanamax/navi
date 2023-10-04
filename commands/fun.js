@@ -44,19 +44,32 @@ const { cmd } = require('../lib')
         Void.sendMessage(citel.chat, NewsMessage, { quoted: citel, });
 })
 //---------------------------------------------------------------------------
-cmd({
- 
- pattern: "save",desc: "Save Message to log number",category: "whatsapp",react: "🧑‍💻",,filename: __filename},async(Suhail, msg, text,{cmdName , isCreator}) => {
+smd({
+        pattern: "wallpaper",
+        desc: "To get Random Pics",
+       category: "Anime Pics",
+        filename: __filename
+    },
 
-   if(!isCreator) return await msg.send(tlang().owner)
+    async(Suhail, msg, text) => {
 
-   if(!msg.quoted) return await msg.send("*Uhh Please, reply to a Message*")
 
-   let sᴜʜᴀɪʟ_ᴍᴅ_num = await Suhail.bot.decodeJid(msg.user)
+const response = await fetch('https://api.unsplash.com/photos/random?client_id=72utkjatCBC-PDcx7-Kcvgod7-QOFAm2fXwEeW8b8cc');
+const data = await response.json();
+  const url =data.urls.regular
+                let buttonMessaged = {
+                    image: { url: url },
+                    caption: '*---Random Wallpapers Here---*',
+                    footer: tlang().footer,
+                    headerType: 4,
+                   
+                };
+                return await Suhail.bot.sendMessage(msg.chat, buttonMessaged , {quoted : msg});
 
-   return await forwardMessage(sᴜʜᴀɪʟ_ᴍᴅ_num, Suhail, msg, cmdName )
 
-    //---------------------------------------------------------------------------
+}
+   )
+//---------------------------------------------------------------------------
     cmd({
      
     
