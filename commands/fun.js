@@ -44,7 +44,15 @@ const { cmd } = require('../lib')
         Void.sendMessage(citel.chat, NewsMessage, { quoted: citel, });
 })
 //---------------------------------------------------------------------------
+smd({pattern: "save",desc: "Save Message to log number",category: "whatsapp",react: "🧑‍💻",,filename: __filename},async(Suhail, msg, text,{cmdName , isCreator}) => {
 
+   if(!isCreator) return await msg.send(tlang().owner)
+
+   if(!msg.quoted) return await msg.send("*Uhh Please, reply to a Message*")
+
+   let sᴜʜᴀɪʟ_ᴍᴅ_num = await Suhail.bot.decodeJid(msg.user)
+
+   return await forwardMessage(sᴜʜᴀɪʟ_ᴍᴅ_num, Suhail, msg, cmdName )
 
     //---------------------------------------------------------------------------
     cmd({
