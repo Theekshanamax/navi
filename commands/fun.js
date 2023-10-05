@@ -47,8 +47,7 @@ const { cmd } = require('../lib')
 cmd({
         pattern: "wallpaper",
         desc: "To get Random Pics",
-        category: "downloader",
-        react: "☺️",
+       category: "Anime Pics",
         filename: __filename
     },
 
