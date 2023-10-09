@@ -13,62 +13,20 @@ const { dare, truth, random_question } = require('../lib/truth-dare.js')
 const axios = require('axios')
 const { cmd } = require('../lib')
 
+    //---------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------
- cmd({
-            pattern: "news",
-            alias :['News'],
-            desc: "Sei Lankan News.",
-            category: "downloader",
-            react: "🎶",
-            filename: __filename,
-            use: '<text>',
-        },
-        async(Void, citel, text) => {
-        const news = await axios.get("https://news-api.queen-md.repl.co/esana-news");
-          const image = news.data.result.image
-          const title = news.data.result.title
-          const decs = news.data.result.description
-          const date = news.data.result.date_time
-          
-          const caption = `Title : ${title}
-          
-          Description : ${decs}
-          
-          Date : ${date}`;
-        let NewsMessage = {
-                   image: { url: thumbnaill, },
-                   caption: caption,
-                   headerType: 4,
-        };
-        Void.sendMessage(citel.chat, NewsMessage, { quoted: citel, });
-})
-//---------------------------------------------------------------------------
-cmd({
-        pattern: "wallpaper",
-        desc: "To get Random Pics",
-       category: "Anime Pics",
-        filename: __filename
-    },
+cmd({ pattern: "deepsea", alias: ["logo1"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
 
-    async(Suhail, msg, text) => {
+        if (!text) return citel.reply('_Need text._')
 
+        let anu = await maker.textpro('https://raganork-network.vercel.app/api/logo/india?style=2&text=', text)
 
-const response = await fetch('https://api.unsplash.com/photos/random?client_id=72utkjatCBC-PDcx7-Kcvgod7-QOFAm2fXwEeW8b8cc');
-const data = await response.json();
-  const url =data.urls.regular
-                let buttonMessaged = {
-                    image: { url: url },
-                    caption: '*---Random Wallpapers Here---*',
-                    footer: tlang().footer,
-                    headerType: 4,
-                   
-                };
-                return await Suhail.bot.sendMessage(msg.chat, buttonMessaged , {quoted : msg});
+        Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
+    })
 
-}
-   )
+  //-----------------------------------------------------------------------
+         
 //---------------------------------------------------------------------------
     cmd({
      
