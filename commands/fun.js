@@ -19,7 +19,7 @@ const { cmd } = require('../lib')
         pattern: "logo5",
         desc: "sets.",
         category: "group",
-        react: "👋",
+        react: "🌹",
         filename: __filename,
     }, 
  async(Void, citel, text) => {
