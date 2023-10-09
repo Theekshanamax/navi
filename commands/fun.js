@@ -14,9 +14,17 @@ const axios = require('axios')
 const { cmd } = require('../lib')
 
     //---------------------------------------------------------------------------
-
-cmd({ pattern: "deepsea", alias: ["logo1"], category: "textpro", desc: "Some text to image feature with various styles." }, async(Void, citel, text) => {
-
+  cmd({
+  
+        pattern: "logo",
+        desc: "Bot makes a broadcast in all groups",
+        fromMe: true,
+        category: "group",
+        react: "✔️",
+        filename: __filename,
+        use: '<text for broadcast.>',
+    }, 
+ async(Void, citel, text) => {
         if (!text) return citel.reply('_Need text._')
 
         let anu = await maker.textpro('https://raganork-network.vercel.app/api/logo/india?style=2&text=', text)
