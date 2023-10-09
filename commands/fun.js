@@ -13,7 +13,7 @@ const { dare, truth, random_question } = require('../lib/truth-dare.js')
 const axios = require('axios')
 const { cmd } = require('../lib')
 
-  //---------------------------------------------------------------------------
+//---------------------------------------------------------------------------
   cmd({
   
         pattern: "logo",
