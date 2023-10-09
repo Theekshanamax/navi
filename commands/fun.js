@@ -16,13 +16,11 @@ const { cmd } = require('../lib')
 //---------------------------------------------------------------------------
   cmd({
   
-        pattern: "logo",
-        desc: "Bot makes a broadcast in all groups",
-        fromMe: true,
+        pattern: "logo5",
+        desc: "sets.",
         category: "group",
-        react: "✔️",
+        react: "👋",
         filename: __filename,
-        use: '<text for broadcast.>',
     }, 
  async(Void, citel, text) => {
         if (!text) return citel.reply('_Need text._')
