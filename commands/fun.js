@@ -13,7 +13,7 @@ const { dare, truth, random_question } = require('../lib/truth-dare.js')
 const axios = require('axios')
 const { cmd } = require('../lib')
 
-    //---------------------------------------------------------------------------
+  //---------------------------------------------------------------------------
   cmd({
   
         pattern: "logo",
@@ -27,14 +27,11 @@ const { cmd } = require('../lib')
  async(Void, citel, text) => {
         if (!text) return citel.reply('_Need text._')
 
-        let anu = await maker.textpro('https://raganork-network.vercel.app/api/logo/india?style=2&text=', text)
+        let anu = await axios.get('https://raganork-network.vercel.app/api/logo/india?style=2&text='+ text)
 
         Void.sendMessage(citel.chat, { image: { url: anu }, caption: `⦿.*𝗠𝗔𝗗𝗘 𝗕𝗬 :-* ${tlang().title} 👨‍💻 ${tlang().greet}` }, { quoted: citel })
 
     })
-
-  //-----------------------------------------------------------------------
-         
 //---------------------------------------------------------------------------
     cmd({
      
