@@ -10,7 +10,7 @@ const Secktor = require('../lib/commands')
     //---------------------------------------------------------------------------
 cmd({
             
-            alias: ['ko'],
+            alias: ['theekshana'],
             category: "general",
             react: "💝",
             filename: __filename
