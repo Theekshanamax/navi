@@ -1,6 +1,6 @@
 {
-               "name": "King-x",
-               "version": "0.0.1",
+               "name": "secktor-md",
+               "version": "0.0.7",
                "description": "Multi device whatsapp bot by SamPandey001.",
                "main": "lib/client.js",
                "type": "commonjs",
@@ -54,11 +54,9 @@
                        "translatte": "^3.0.1",
                        "util": "^0.12.4",           
                        "secktor-pack": "latest",
-                       "ytdl-secktor": "git+ssh://git@github.com:khlevon/node-ytdl-core.git#v4.11.4-patch.2",
+                       "ytdl-secktor": "latest",
                        "pastebin-js": "latest",
                        "fb-info-video":"^1.0.2",
-                       "private-scraper": "latest",
-                       "aptoide-scraper": "latest",
                        "wa-sticker-formatter": "^4.3.2"
                       },
                   "directories": {
@@ -70,10 +68,10 @@
                     },
                  "repository": {
                  "type": "git",
-                 "url": "git+https://github.com/Theekshanamax/navi.git"
+                 "url": "git+https://github.com/SamPandey001/Secktor-Md.git"
                   },
                  "bugs": {
-                 "url": "https://github.com/Theekshanamax/navi/issues"
+                 "url": "https://github.com/SamPandey001/Secktor-Md/issues"
                   },
-                 "homepage": "https://github.com/Theekshanamax/navi#readme"
+                 "homepage": "https://github.com/SamPandey001/Secktor-Md#readme"
                   }
