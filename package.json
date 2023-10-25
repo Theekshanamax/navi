@@ -57,6 +57,8 @@
                        "translatte": "^3.0.1",
                        "util": "^0.12.4",           
                        "secktor-pack": "latest",
+                       "fb-info-video":"latest",
+                       "vihangayt-fbdl": "latest",
                        "ytdl-secktor": "latest",
                        "pastebin-js": "latest",
                        "fb-info-video":"^1.0.2",
