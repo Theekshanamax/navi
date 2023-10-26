@@ -54,6 +54,7 @@
                        "api-dylux": "latest",
                        "@xct007/frieren-scraper": "latest",
                        "@saipulanuar/tiktok-scraper-ts": "latest",
+                       "@sl-code-lords/text-pro-me": "latest",
                        "translatte": "^3.0.1",
                        "util": "^0.12.4",           
                        "secktor-pack": "latest",
